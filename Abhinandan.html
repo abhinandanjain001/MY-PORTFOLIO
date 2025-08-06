@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Abhinandan Jain — Portfolio</title>
+
+  <!-- Locomotive Scroll -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.css" />
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;900&display=swap" rel="stylesheet" />
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="aj.css" />
+</head>
+<!-- Preloader -->
+<div id="preloader">
+  <div class="loader-text">
+    <span>A</span><span>B</span><span>H</span><span>I</span><span>N</span><span>A</span><span>N</span><span>D</span><span>A</span><span>N</span>
+  </div>
+</div>
+
+<body>
+  <div id="main" data-scroll-container>
+<canvas id="bg-canvas"></canvas>
+<div class="custom-cursor"></div>
+
+
+    <section data-scroll-section>
+      <div class="profile-frame">
+        <img src="abhinandanjain.jpeg" alt="Abhinandan Jain" />
+      </div>
+      <h1 data-scroll data-scroll-speed="2">Abhinandan Jain</h1>
+      <a href="login.html" class="outline-hover">Client Login</a>
+      <p data-scroll data-scroll-speed="1">CSE Student | Developer | Leader | AI Enthusiast</p>
+    </section>
+
+    <section data-scroll-section>
+      <h2 data-scroll data-scroll-speed="1">About Me</h2>
+      <p data-scroll data-scroll-speed="2">
+        I'm a B.Tech CSE student at JECRC with a strong foundation in programming, web dev, and ML.
+        I've led teams in hackathons, developed AI projects, and mentor peers in Python, C++, and JavaScript.
+      </p>
+    </section>
+
+   <section class="projects-section">
+     
+
+  <h2 class="section-title">My Projects</h2>
+  <div class="projects-container">
+  <div class="project-card">
+     
+      <h3>VIRTUAL 3D store Project</h3>
+      <p>Ai based virtual reality 3d store</p>
+      <a href="https://retail-vision-guide.lovable.app" target="_blank">View Project</a>
+    </div>
+
+    <div class="project-card">
+
+      <h3>Weather App</h3>
+      <p>weather forcast app can pridict the weathe upto 5 days</p>
+      <a href="https://rainbow-slowly-colorado-cruz.trycloudflare.com  " target="_blank">View Project</a>
+    </div>
+
+    <div class="project-card">
+     
+      <h3>Education GURU</h3>
+      <p>Education website with Ai integration</p>
+      <a href="https://guyana-instrumentation-cons-introduces.trycloudflare.com  " target="_blank">View Project</a>
+    </div>
+   
+     <div class="project-card">
+      
+      <h3>jarvis Ai</h3>
+      <p>An Ai assistant which can don all work</p>
+      <a href="https://github.com/abhinandanjain001/jarvis-ai" target="_blank">View Project</a>
+    </div>
+     
+
+    <!-- Add more project-card blocks as needed -->
+  </div>
+</section>
+
+
+
+    <section data-scroll-section>
+      <h2 data-scroll data-scroll-speed="1">Tech Stack</h2>
+      <ul class="tech-list">
+        <li>C++</li>
+        <li>Python</li>
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>JavaScript</li>
+        <li>MediaPipe</li>
+        <li>OpenCV</li>
+        <li>MySQL</li>
+      </ul>
+    </section>
+    
+
+    <section data-scroll-section>
+    
+
+      <h2 data-scroll data-scroll-speed="1">Contact</h2>
+          
+      <p>Email: abhinandanjain.cse27@jecrc.ac.in</p>
+      <p>Phone: 8955881717</p>
+      <p>GitHub: <a href="https://github.com/Abhinandanjain13" target="_blank">Abhinandanjain13</a></p>
+      <p>LinkedIn: <a href="https://linkedin.com/in/abhinandan-jain-2559a6292" target="_blank">LinkedIn Profile</a></p>
+      <p>leetcode: <a href="https://leetcode.com/u/AbhinandanJain/" target="_blank">leetcode Profile</a></p>
+      <p>geeksforgeeks: <a href="https://www.geeksforgeeks.org/user/abhinandan2bx4/" target="_blank">geeksforgeeks Profile</a></p>
+    </section>
+
+    <div class="footer">&copy; 2025 Abhinandan Jain</div>
+  </div>
+
+  <!-- Locomotive Scroll JS -->
+  <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.js"></script>
+  <script src="aj.js"></script>
+  <script>
+  window.addEventListener("load", function () {
+    const preloader = document.getElementById("preloader");
+    preloader.style.opacity = "0";
+    setTimeout(() => {
+      preloader.style.display = "none";
+    }, 800); // Adjust timing if needed
+  });
+</script>
+
+</body>
+</html>
