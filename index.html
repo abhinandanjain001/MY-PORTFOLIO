@@ -14,6 +14,7 @@
   <!-- Custom CSS -->
   <link rel="stylesheet" href="aj.css" />
 </head>
+
 <!-- Preloader -->
 <div id="preloader">
   <div class="loader-text">
@@ -23,10 +24,12 @@
 
 <body>
   <div id="main" data-scroll-container>
-<canvas id="bg-canvas"></canvas>
-<div class="custom-cursor"></div>
 
+    <!-- Animated Background -->
+    <canvas id="bg-canvas"></canvas>
+    <div class="custom-cursor"></div>
 
+    <!-- Hero Section -->
     <section data-scroll-section>
       <div class="profile-frame">
         <img src="abhinandanjain.jpeg" alt="Abhinandan Jain" />
@@ -36,6 +39,7 @@
       <p data-scroll data-scroll-speed="1">CSE Student | Developer | Leader | AI Enthusiast</p>
     </section>
 
+    <!-- About -->
     <section data-scroll-section>
       <h2 data-scroll data-scroll-speed="1">About Me</h2>
       <p data-scroll data-scroll-speed="2">
@@ -44,46 +48,34 @@
       </p>
     </section>
 
-   <section class="projects-section">
-     
+    <!-- Projects -->
+    <section class="projects-section">
+      <h2 class="section-title">My Projects</h2>
+      <div class="projects-container">
+        <div class="project-card">
+          <h3>VIRTUAL 3D store Project</h3>
+          <p>AI based virtual reality 3D store</p>
+          <a href="https://retail-vision-guide.lovable.app" target="_blank">View Project</a>
+        </div>
+        <div class="project-card">
+          <h3>Weather App</h3>
+          <p>Weather forecast app can predict the weather up to 5 days</p>
+          <a href="https://today-weather-io.vercel.app/" target="_blank">View Project</a>
+        </div>
+        <div class="project-card">
+          <h3>Education GURU</h3>
+          <p>Education website with AI integration</p>
+          <a href="https://guyana-instrumentation-cons-introduces.trycloudflare.com" target="_blank">View Project</a>
+        </div>
+        <div class="project-card">
+          <h3>Jarvis AI</h3>
+          <p>An AI assistant which can do all work</p>
+          <a href="https://github.com/abhinandanjain001/jarvis-ai" target="_blank">View Project</a>
+        </div>
+      </div>
+    </section>
 
-  <h2 class="section-title">My Projects</h2>
-  <div class="projects-container">
-  <div class="project-card">
-     
-      <h3>VIRTUAL 3D store Project</h3>
-      <p>Ai based virtual reality 3d store</p>
-      <a href="https://retail-vision-guide.lovable.app" target="_blank">View Project</a>
-    </div>
-
-    <div class="project-card">
-
-      <h3>Weather App</h3>
-      <p>weather forcast app can pridict the weathe upto 5 days</p>
-      <a href="https://today-weather-io.vercel.app/ " target="_blank">View Project</a>
-    </div>
-
-    <div class="project-card">
-     
-      <h3>Education GURU</h3>
-      <p>Education website with Ai integration</p>
-      <a href="https://guyana-instrumentation-cons-introduces.trycloudflare.com  " target="_blank">View Project</a>
-    </div>
-   
-     <div class="project-card">
-      
-      <h3>jarvis Ai</h3>
-      <p>An Ai assistant which can don all work</p>
-      <a href="https://github.com/abhinandanjain001/jarvis-ai" target="_blank">View Project</a>
-    </div>
-     
-
-    <!-- Add more project-card blocks as needed -->
-  </div>
-</section>
-
-
-
+    <!-- Tech Stack -->
     <section data-scroll-section>
       <h2 data-scroll data-scroll-speed="1">Tech Stack</h2>
       <ul class="tech-list">
@@ -97,21 +89,19 @@
         <li>MySQL</li>
       </ul>
     </section>
-    
 
+    <!-- Contact -->
     <section data-scroll-section>
-    
-
       <h2 data-scroll data-scroll-speed="1">Contact</h2>
-          
       <p>Email: abhinandanjain.cse27@jecrc.ac.in</p>
       <p>Phone: 8955881717</p>
       <p>GitHub: <a href="https://github.com/Abhinandanjain13" target="_blank">Abhinandanjain13</a></p>
       <p>LinkedIn: <a href="https://linkedin.com/in/abhinandan-jain-2559a6292" target="_blank">LinkedIn Profile</a></p>
-      <p>leetcode: <a href="https://leetcode.com/u/AbhinandanJain/" target="_blank">leetcode Profile</a></p>
-      <p>geeksforgeeks: <a href="https://www.geeksforgeeks.org/user/abhinandan2bx4/" target="_blank">geeksforgeeks Profile</a></p>
+      <p>LeetCode: <a href="https://leetcode.com/u/AbhinandanJain/" target="_blank">LeetCode Profile</a></p>
+      <p>GeeksforGeeks: <a href="https://www.geeksforgeeks.org/user/abhinandan2bx4/" target="_blank">GFG Profile</a></p>
     </section>
 
+    <!-- Footer -->
     <div class="footer">&copy; 2025 Abhinandan Jain</div>
   </div>
 
@@ -119,14 +109,13 @@
   <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.js"></script>
   <script src="aj.js"></script>
   <script>
-  window.addEventListener("load", function () {
-    const preloader = document.getElementById("preloader");
-    preloader.style.opacity = "0";
-    setTimeout(() => {
-      preloader.style.display = "none";
-    }, 800); // Adjust timing if needed
-  });
-</script>
-
+    window.addEventListener("load", function () {
+      const preloader = document.getElementById("preloader");
+      preloader.style.opacity = "0";
+      setTimeout(() => {
+        preloader.style.display = "none";
+      }, 800);
+    });
+  </script>
 </body>
 </html>

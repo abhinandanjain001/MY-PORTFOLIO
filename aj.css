@@ -1,34 +1,40 @@
 /* Reset */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+* { margin: 0; padding: 0; box-sizing: border-box; }
 
 html, body {
   width: 100%;
   height: 100%;
   font-family: 'Inter', sans-serif;
-  background: #000;
   color: #fff;
   overflow-x: hidden;
 }
 
-/* Canvas background */
+/* Animated Dark Gradient Background */
+body {
+  background: linear-gradient(-45deg, #0a0a0a, #111, #1a1a1a, #0d0d0d);
+  background-size: 400% 400%;
+  animation: darkMove 20s ease infinite;
+  color: #e0e0e0;
+}
+@keyframes darkMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Canvas stays ready for future effects */
 #bg-canvas {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
   z-index: -1;
+  pointer-events: none;
 }
 
 /* Custom cursor */
 .custom-cursor {
   position: fixed;
-  width: 20px;
-  height: 20px;
+  width: 20px; height: 20px;
   border: 2px solid #fff;
   border-radius: 50%;
   transform: translate(-50%, -50%);
@@ -45,29 +51,17 @@ section {
   text-align: center;
 }
 
+/* Profile */
 .profile-frame img {
-  width: 200px;
-  height: 200px;
+  width: 200px; height: 200px;
   border-radius: 50%;
   object-fit: cover;
 }
 
 /* Typography */
-h1 {
-  font-size: 3rem;
-  margin-top: 1rem;
-}
-
-h2 {
-  font-size: 2rem;
-  margin: 2rem 0 1rem;
-}
-
-p {
-  font-size: 1.1rem;
-  line-height: 1.6;
-  margin-bottom: 1rem;
-}
+h1 { font-size: 3rem; margin-top: 1rem; }
+h2 { font-size: 2rem; margin: 2rem 0 1rem; }
+p  { font-size: 1.1rem; line-height: 1.6; margin-bottom: 1rem; }
 
 /* Projects */
 .projects-container {
@@ -76,27 +70,20 @@ p {
   gap: 1.5rem;
   margin-top: 2rem;
 }
-
 .project-card {
   padding: 1.5rem;
   background: rgba(255, 255, 255, 0.05);
   border-radius: 12px;
   transition: transform 0.3s;
 }
-
-.project-card:hover {
-  transform: translateY(-5px);
-}
+.project-card:hover { transform: translateY(-5px); }
 
 /* Tech stack */
 .tech-list {
-  display: flex;
-  flex-wrap: wrap;
+  display: flex; flex-wrap: wrap;
   justify-content: center;
-  gap: 1rem;
-  margin-top: 1.5rem;
+  gap: 1rem; margin-top: 1.5rem;
 }
-
 .tech-list li {
   padding: 0.5rem 1rem;
   border: 1px solid #fff;
@@ -126,51 +113,25 @@ p {
   overflow: hidden;
   transition: background 0.3s, color 0.3s;
 }
+.outline-hover:hover { background: #fff; color: #000; }
 
-.outline-hover:hover {
-  background: #fff;
-  color: #000;
-}
-
-/* Media Queries (Responsive Scaling) */
+/* Responsive */
 @media (max-width: 992px) {
   h1 { font-size: 2.4rem; }
   h2 { font-size: 1.8rem; }
   p  { font-size: 1rem; }
   .profile-frame img { width: 160px; height: 160px; }
 }
-
 @media (max-width: 768px) {
   h1 { font-size: 2rem; }
   h2 { font-size: 1.5rem; }
   p  { font-size: 0.95rem; }
   section { padding: 3rem 1rem; }
 }
-
 @media (max-width: 480px) {
   h1 { font-size: 1.6rem; }
   h2 { font-size: 1.2rem; }
   p  { font-size: 0.9rem; }
   .profile-frame img { width: 130px; height: 130px; }
   .outline-hover { width: 100%; text-align: center; }
-}
-/* Animated Gradient Background */
-body {
-  background: linear-gradient(-45deg, #00c6ff, #0072ff, #6dd5ed, #2193b0);
-  background-size: 400% 400%;
-  animation: gradientBG 15s ease infinite;
-  margin: 0; /* keep your layout intact */
-}
-
-/* Keyframes for animation */
-@keyframes gradientBG {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
 }
