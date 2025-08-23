@@ -135,37 +135,70 @@ p  { font-size: 1.1rem; line-height: 1.6; margin-bottom: 1rem; }
   .profile-frame img { width: 130px; height: 130px; }
   .outline-hover { width: 100%; text-align: center; }
 }
-/* Navbar */
+/* Navbar Base */
 .navbar {
   position: fixed;
   top: 0;
   width: 100%;
-  background: rgba(0, 0, 0, 0.85);
+  background: rgba(0,0,0,0.9);
   padding: 15px;
-  text-align: center;
   z-index: 1000;
+  text-align: center;
 }
 
 .navbar ul {
   list-style: none;
   display: flex;
-  justify-content: center;
   gap: 30px;
+  justify-content: center;
   margin: 0;
   padding: 0;
 }
 
-.navbar ul li a {
+.navbar a {
   color: #0f0;
   text-decoration: none;
   font-size: 18px;
-  font-family: monospace;
-  transition: color 0.3s;
+  transition: 0.3s;
 }
 
-.navbar ul li a:hover {
+.navbar a:hover {
   color: cyan;
 }
+
+/* Mobile Menu Button */
+.menu-toggle {
+  display: none;
+  font-size: 26px;
+  color: #0f0;
+  cursor: pointer;
+  position: absolute;
+  right: 20px;
+  top: 12px;
+}
+
+/* Mobile View */
+@media (max-width: 768px) {
+  .navbar ul {
+    flex-direction: column;
+    background: rgba(0,0,0,0.95);
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    display: none;
+    padding: 20px 0;
+  }
+
+  .navbar ul.active {
+    display: flex;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+}
+
 
 /* Loading Screen Base */
 #loading-screen {
