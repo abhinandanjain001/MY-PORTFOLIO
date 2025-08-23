@@ -59,7 +59,6 @@
   </ul>
 </nav>
 
-
     
 
     <!-- Hero Section -->
@@ -151,6 +150,7 @@
     });
   </script>
   <script>
+document.addEventListener("DOMContentLoaded", () => {
   const menuToggle = document.querySelector(".menu-toggle");
   const navMenu = document.querySelector(".navbar ul");
 
@@ -158,12 +158,13 @@
     navMenu.classList.toggle("active");
   });
 
-  // Close menu when clicking a link (for smooth UX on phone)
+  // Close menu when a link is clicked
   document.querySelectorAll(".navbar a").forEach(link => {
     link.addEventListener("click", () => {
       navMenu.classList.remove("active");
     });
   });
+});
 </script>
 
     <script src="loading.js"></script>

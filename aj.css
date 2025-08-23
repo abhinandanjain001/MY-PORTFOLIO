@@ -188,14 +188,11 @@ p  { font-size: 1.1rem; line-height: 1.6; margin-bottom: 1rem; }
     width: 100%;
     display: none;
     padding: 20px 0;
+    z-index: 2000; /* ✅ ensures menu is above other content */
   }
 
   .navbar ul.active {
     display: flex;
-  }
-
-  .menu-toggle {
-    display: block;
   }
 }
 
