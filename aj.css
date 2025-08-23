@@ -135,3 +135,110 @@ p  { font-size: 1.1rem; line-height: 1.6; margin-bottom: 1rem; }
   .profile-frame img { width: 130px; height: 130px; }
   .outline-hover { width: 100%; text-align: center; }
 }
+/* Navbar */
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.85);
+  padding: 15px;
+  text-align: center;
+  z-index: 1000;
+}
+
+.navbar ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar ul li a {
+  color: #0f0;
+  text-decoration: none;
+  font-size: 18px;
+  font-family: monospace;
+  transition: color 0.3s;
+}
+
+.navbar ul li a:hover {
+  color: cyan;
+}
+
+/* Loading Screen Base */
+#loading-screen {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: black;
+  color: #0f0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  z-index: 99999;
+  overflow: hidden;
+}
+
+/* Matrix Canvas Background */
+#matrix-canvas {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: black;
+  z-index: -1;
+}
+
+/* Glitchy Logo */
+.logo-glitch {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #0f0;
+  text-shadow: 0 0 8px #0f0;
+  animation: glitch 1s infinite;
+}
+
+@keyframes glitch {
+  0% { text-shadow: 2px 0 red, -2px 0 blue; }
+  20% { text-shadow: -2px 0 lime, 2px 0 cyan; }
+  40% { text-shadow: 2px 2px red, -2px -2px blue; }
+  100% { text-shadow: 0 0 8px #0f0; }
+}
+
+/* Fake Terminal Logs */
+.terminal {
+  font-family: monospace;
+  font-size: 14px;
+  margin: 10px 0;
+  white-space: pre-line;
+  text-align: left;
+  max-height: 150px;
+  overflow-y: auto;
+  width: 80%;
+}
+
+/* Progress Bar */
+.progress {
+  width: 80%;
+  height: 6px;
+  background: #111;
+  margin: 20px 0;
+  border-radius: 4px;
+  overflow: hidden;
+}
+.progress span {
+  display: block;
+  height: 100%;
+  width: 0;
+  background: #0f0;
+  transition: width 0.3s;
+}
+
+/* Skip Hint */
+.hint {
+  font-size: 0.9rem;
+  color: #777;
+  margin-top: 10px;
+}

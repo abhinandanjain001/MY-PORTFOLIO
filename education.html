@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Education — Abhinandan Jain</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body{margin:0;font-family:monospace;background:#0d0d0d;color:#0f0}
+    .navbar{position:fixed;top:0;width:100%;background:rgba(0,0,0,.9);padding:15px;z-index:1000;text-align:center}
+    .navbar ul{list-style:none;display:flex;gap:30px;justify-content:center;margin:0;padding:0}
+    .navbar a{color:#0f0;text-decoration:none;font-size:18px;transition:.3s}
+    .navbar a:hover{color:cyan}
+    .edu{padding:120px 20px 40px;text-align:center}
+    .edu h1{font-size:2rem;margin-bottom:30px;color:cyan}
+    .timeline{max-width:1000px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px}
+    .card{background:#1a1a1a;border:1px solid #0f0;border-radius:12px;padding:18px;text-align:left;transition:transform .3s, box-shadow .3s}
+    .card:hover{transform:translateY(-6px);box-shadow:0 0 18px rgba(0,255,0,.4)}
+    .card h3{margin:0 0 6px;color:#0f0}
+    .card .meta{font-size:.9rem;color:#9fe89f;margin-bottom:10px}
+    .card p{color:#cfcfcf;line-height:1.5}
+    .tag{display:inline-block;border:1px solid #0f0;border-radius:8px;padding:3px 8px;margin:6px 6px 0 0;font-size:.85rem;color:#0f0}
+    #bg-canvas{position:fixed;inset:0;width:100%;height:100%;z-index:-1;background:#000}
+  </style>
+</head>
+<body>
+  <canvas id="bg-canvas"></canvas>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <ul>
+       <li><a href="index.html">Home</a></li>
+      <li><a href="index.html#family">Family</a></li>
+      <li><a href="index.html#work">Work</a></li>
+      <li><a href="education.html">Education</a></li>
+      <li><a href="Certificates.html">Certificates</a></li>
+    </ul>
+  </nav>
+
+  <!-- Education Section -->
+  <section class="edu">
+    <h1>My Education</h1>
+    <div class="timeline">
+
+      <div class="card">
+        <h3>B.Tech — Computer Science & Engineering</h3>
+        <div class="meta">JECRC, Jaipur • 2023–2027</div>
+        <p>Cumulative SGPA: 9.03. Focus on DSA, DBMS, AI/ML, and full-stack development.</p>
+        <div><span class="tag">C++</span><span class="tag">Python</span><span class="tag">JS</span><span class="tag">MySQL</span></div>
+      </div>
+
+      <div class="card">
+        <h3>Symbiosis International University, Pune</h3>
+        <div class="meta">Grade: A++</div>
+        <p>Completed coursework with distinction, strengthening fundamentals in CS and applied learning.</p>
+        <div><span class="tag">Academic Excellence</span><span class="tag">A++</span></div>
+      </div>
+
+      <div class="card">
+        <h3>Senior Secondary (12th Board)</h3>
+        <div class="meta">CBSE • 2022</div>
+        <p>Percentage: 91% • PCM with Computer Science.</p>
+        <div><span class="tag">Physics</span><span class="tag">Chemistry</span><span class="tag">Maths</span><span class="tag">CS</span></div>
+      </div>
+
+      <div class="card">
+        <h3>Secondary (10th Board)</h3>
+        <div class="meta">CBSE • 2020</div>
+        <p>Percentage: 90.83% • Strong foundation in science & mathematics.</p>
+        <div><span class="tag">Foundations</span><span class="tag">Logic</span></div>
+      </div>
+
+      <div class="card">
+        <h3>JEE Main 2023</h3>
+        <div class="meta">Percentile: 95.44</div>
+        <p>Qualified national-level engineering entrance exam with high percentile.</p>
+        <div><span class="tag">Competitive Exam</span></div>
+      </div>
+
+      <div class="card">
+        <h3>BITS Pilani Entrance Exam</h3>
+        <p>Successfully appeared for BITSAT as part of engineering entrance pathway.</p>
+        <div><span class="tag">BITSAT</span></div>
+      </div>
+
+      <div class="card">
+        <h3>Mathematics Olympiad</h3>
+        <div class="meta">Bronze Medalist</div>
+        <p>Awarded Bronze Medal at Mathematics Olympiad for problem-solving excellence.</p>
+        <div><span class="tag">Olympiad</span><span class="tag">Mathematics</span></div>
+      </div>
+
+    </div>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>

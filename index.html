@@ -23,11 +23,41 @@
 </div>
 
 <body>
+  <body>
+  <!-- Loading Screen -->
+  <div id="loading-screen" aria-hidden="true">
+    <canvas id="matrix-canvas"></canvas>
+    <div class="scanlines"></div>
+    <div class="loader-wrap">
+      <div class="logo-glitch" data-text="ABHINANDAN">ABHINANDAN</div>
+      <pre id="loading-logs" class="terminal"></pre>
+      <div class="progress"><span id="bar"></span></div>
+      <div class="hint">Press ESC to skip</div>
+    </div>
+  </div>
+
+  <!-- Main Website -->
+  <div id="main" data-scroll-container>
+    <!-- your current content (navbar, hero, sections, etc.) -->
+  </div>
+</body>
   <div id="main" data-scroll-container>
 
     <!-- Animated Background -->
     <canvas id="bg-canvas"></canvas>
     <div class="custom-cursor"></div>
+<!-- Navbar -->
+<nav class="navbar">
+  <ul>
+    <li><a href="about.html">About</a></li>
+    <li><a href="family.html">Family</a></li>
+    <li><a href="work.html">Work</a></li>
+    <li><a href="education.html">Education</a></li>
+    <li><a href="Certificetes.html">Certificates</a></li>
+  </ul>
+</nav>
+
+    
 
     <!-- Hero Section -->
     <section data-scroll-section>
@@ -117,5 +147,6 @@
       }, 800);
     });
   </script>
+    <script src="loading.js"></script>
 </body>
 </html>

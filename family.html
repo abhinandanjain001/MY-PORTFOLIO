@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Family — Abhinandan Jain</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      margin: 0;
+      font-family: monospace;
+      background: #0d0d0d;
+      color: #0f0;
+    }
+    .navbar {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: rgba(0,0,0,0.9);
+      padding: 15px;
+      z-index: 1000;
+      text-align: center;
+    }
+    .navbar ul {
+      list-style: none;
+      display: flex;
+      gap: 30px;
+      justify-content: center;
+      margin: 0;
+      padding: 0;
+    }
+    .navbar a {
+      color: #0f0;
+      text-decoration: none;
+      font-size: 18px;
+      transition: 0.3s;
+    }
+    .navbar a:hover {
+      color: cyan;
+    }
+    .family {
+      padding: 120px 20px 40px;
+      max-width: 1000px;
+      margin: auto;
+      text-align: center;
+    }
+    .family h1 {
+      font-size: 2rem;
+      margin-bottom: 30px;
+      color: cyan;
+    }
+    .family-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 20px;
+    }
+    .family-card {
+      background: #1a1a1a;
+      border: 1px solid #0f0;
+      border-radius: 12px;
+      padding: 20px;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .family-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 0 18px rgba(0, 255, 0, 0.4);
+    }
+    .family-card h3 {
+      margin-bottom: 10px;
+      color: #0f0;
+    }
+    .family-card p {
+      color: #cfcfcf;
+      line-height: 1.5;
+    }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="family.html">Family</a></li>
+      <li><a href="work.html">Work</a></li>
+      <li><a href="education.html">Education</a></li>
+      <li><a href="certificates.html">Certificates</a></li>
+    </ul>
+  </nav>
+
+  <!-- Family Section -->
+  <section class="family">
+    <h1>My Family</h1>
+    <div class="family-container">
+      <div class="family-card">
+        <h3>Father</h3>
+        <p>A hardworking shopkeeper who inspires me with his dedication and values.</p>
+      </div>
+      <div class="family-card">
+        <h3>Mother</h3>
+        <p>A caring homemaker, the backbone of our family and my strongest support.</p>
+      </div>
+      <div class="family-card">
+        <h3>Sister</h3>
+        <p>A Software Engineer at Deloitte, my role model in the tech industry.</p>
+      </div>
+      <div class="family-card">
+        <h3>Me</h3>
+        <p>Pursuing B.Tech in Computer Science at JECRC, aspiring to excel as a developer and AI enthusiast.</p>
+      </div>
+    </div>
+  </section>
+</body>
+</html>
