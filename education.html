@@ -23,19 +23,24 @@
     #bg-canvas{position:fixed;inset:0;width:100%;height:100%;z-index:-1;background:#000}
   </style>
 </head>
+<link rel="stylesheet" href="aj.css" />
+
 <body>
   <canvas id="bg-canvas"></canvas>
 
   <!-- Navbar -->
   <nav class="navbar">
-    <ul>
-       <li><a href="index.html">Home</a></li>
-      <li><a href="index.html#family">Family</a></li>
-      <li><a href="index.html#work">Work</a></li>
-      <li><a href="education.html">Education</a></li>
-      <li><a href="Certificates.html">Certificates</a></li>
-    </ul>
-  </nav>
+  <span class="menu-toggle">&#9776;</span> <!-- Hamburger Icon -->
+  <ul>
+    <li><a href="about.html">About</a></li>
+    <li><a href="family.html">Family</a></li>
+    <li><a href="work.html">Work</a></li>
+    <li><a href="education.html">Education</a></li>
+    <li><a href="certificates.html">Certificates</a></li>
+    <li><a href="index.html">Home</a></li>
+  </ul>
+</nav>
+
 
   <!-- Education Section -->
   <section class="edu">
@@ -94,5 +99,6 @@
   </section>
 
   <script src="script.js"></script>
+  <script src="aj.js"></script>
 </body>
 </html>
