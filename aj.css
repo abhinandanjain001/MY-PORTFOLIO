@@ -22,7 +22,7 @@ body {
   100% { background-position: 0% 50%; }
 }
 
-/* Canvas stays ready for future effects */
+/* Canvas Background */
 #bg-canvas {
   position: fixed;
   top: 0; left: 0;
@@ -31,7 +31,7 @@ body {
   pointer-events: none;
 }
 
-/* Custom cursor */
+/* Custom Cursor */
 .custom-cursor {
   position: fixed;
   width: 20px; height: 20px;
@@ -135,7 +135,8 @@ p  { font-size: 1.1rem; line-height: 1.6; margin-bottom: 1rem; }
   .profile-frame img { width: 130px; height: 130px; }
   .outline-hover { width: 100%; text-align: center; }
 }
-/* Navbar Base */
+
+/* ================= NAVBAR ================= */
 .navbar {
   position: fixed;
   top: 0;
@@ -161,12 +162,9 @@ p  { font-size: 1.1rem; line-height: 1.6; margin-bottom: 1rem; }
   font-size: 18px;
   transition: 0.3s;
 }
+.navbar a:hover { color: cyan; }
 
-.navbar a:hover {
-  color: cyan;
-}
-
-/* Mobile Menu Button */
+/* Hamburger Button */
 .menu-toggle {
   display: none;
   font-size: 26px;
@@ -177,7 +175,7 @@ p  { font-size: 1.1rem; line-height: 1.6; margin-bottom: 1rem; }
   top: 12px;
 }
 
-/* Mobile View */
+/* Mobile Navbar */
 @media (max-width: 768px) {
   .navbar ul {
     flex-direction: column;
@@ -186,18 +184,22 @@ p  { font-size: 1.1rem; line-height: 1.6; margin-bottom: 1rem; }
     top: 60px;
     left: 0;
     width: 100%;
-    display: none;
-    padding: 20px 0;
-    z-index: 2000; /* ✅ ensures menu is above other content */
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease-in-out;
   }
 
   .navbar ul.active {
-    display: flex;
+    max-height: 400px; /* Smooth dropdown */
+    padding: 20px 0;
+  }
+
+  .menu-toggle {
+    display: block;
   }
 }
 
-
-/* Loading Screen Base */
+/* ================= LOADING SCREEN ================= */
 #loading-screen {
   position: fixed;
   top: 0; left: 0;
@@ -212,7 +214,7 @@ p  { font-size: 1.1rem; line-height: 1.6; margin-bottom: 1rem; }
   overflow: hidden;
 }
 
-/* Matrix Canvas Background */
+/* Matrix Canvas */
 #matrix-canvas {
   position: absolute;
   top: 0; left: 0;
@@ -229,7 +231,6 @@ p  { font-size: 1.1rem; line-height: 1.6; margin-bottom: 1rem; }
   text-shadow: 0 0 8px #0f0;
   animation: glitch 1s infinite;
 }
-
 @keyframes glitch {
   0% { text-shadow: 2px 0 red, -2px 0 blue; }
   20% { text-shadow: -2px 0 lime, 2px 0 cyan; }
