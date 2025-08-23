@@ -95,5 +95,22 @@
       solving real-world problems through technology. 🚀
     </p>
   </section>
+  </section>
+  <script >
+    const menuToggle = document.querySelector(".menu-toggle");
+const navMenu = document.querySelector(".navbar ul");
+
+menuToggle.addEventListener("click", () => {
+  navMenu.classList.toggle("active");
+});
+
+// Close menu when clicking a link
+document.querySelectorAll(".navbar a").forEach(link => {
+  link.addEventListener("click", () => {
+    navMenu.classList.remove("active");
+  });
+});
+
+  </script>
 </body>
 </html>
