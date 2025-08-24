@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Login</title>
+  <title>Sign Up</title>
   <style>
     *{margin:0;padding:0;box-sizing:border-box;font-family:Arial, sans-serif;}
     body{
@@ -33,8 +33,12 @@
 </head>
 <body>
   <div class="form-box">
-    <h2>Login</h2>
+    <h2>Sign Up</h2>
     <form onsubmit="redirect(event)">
+      <div class="input-group">
+        <label>Full Name</label>
+        <input type="text" required>
+      </div>
       <div class="input-group">
         <label>Email</label>
         <input type="email" required>
@@ -43,9 +47,9 @@
         <label>Password</label>
         <input type="password" required>
       </div>
-      <button type="submit" class="btn">Login</button>
+      <button type="submit" class="btn">Sign Up</button>
       <div class="switch">
-        Don't have an account? <a href="signup.html">Sign Up</a>
+        Already have an account? <a href="login.html">Login</a>
       </div>
     </form>
   </div>
