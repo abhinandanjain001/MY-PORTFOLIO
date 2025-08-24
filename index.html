@@ -61,7 +61,20 @@
 
     <section data-scroll-section>
       <div class="profile-frame">
-        <img src="abhinandanjain.jpeg" alt="Abhinandan Jain" />
+        <img src="abhinandanjain.jpeg" alt="Abhinandan Jain"
+     style="
+       border-radius: 50%;
+       border: 2px solid #f3ebeb;
+       box-shadow: 
+         0 4px 15px rgba(0,0,0,0.3),
+         0 8px 30px rgba(0,0,0,0.25),
+         0 0 20px rgba(0, 229, 255, 0.6);
+       transition: all 0.4s ease;
+     "
+     onmouseover="this.style.transform='scale(1.05)';this.style.boxShadow='0 10px 25px rgba(0,0,0,0.4), 0 15px 40px rgba(0,229,255,0.8)';"
+     onmouseout="this.style.transform='scale(1)';this.style.boxShadow='0 4px 15px rgba(0,0,0,0.3), 0 8px 30px rgba(0,0,0,0.25), 0 0 20px rgba(0,229,255,0.6)';"
+/>
+
       </div>
       <h1 data-scroll data-scroll-speed="2">Abhinandan Jain</h1>
      <a href="login.html" 
