@@ -40,8 +40,25 @@ function drawStars() {
   }
 }
 
+function drawLogo() {
+  ctx.save();
+  ctx.font = "bold 100px Arial";
+  ctx.textAlign = "center";
+  ctx.textBaseline = "middle";
+
+  // Glow effect
+  ctx.shadowColor = "cyan";
+  ctx.shadowBlur = 25;
+
+  ctx.fillStyle = "#00FFFF"; // bright cyan
+  ctx.fillText("AJ", canvas.width / 2, canvas.height / 2);
+
+  ctx.restore();
+}
+
 function animateBackground() {
   drawStars();
+  drawLogo(); // draw glowing AJ logo in center
   requestAnimationFrame(animateBackground);
 }
 
@@ -53,6 +70,8 @@ window.addEventListener("resize", () => {
   canvas.height = window.innerHeight;
   initStars();
 });
+
+/* Ripple Effect */
 document.querySelectorAll('.click-animate').forEach(el => {
   el.addEventListener('click', function (e) {
     const ripple = document.createElement('span');
@@ -76,6 +95,8 @@ document.querySelectorAll('.click-animate').forEach(el => {
     }, 600);
   });
 });
+
+/* Custom Cursor */
 const cursor = document.querySelector(".custom-cursor");
 
 document.addEventListener("mousemove", (e) => {
@@ -83,7 +104,7 @@ document.addEventListener("mousemove", (e) => {
   cursor.style.left = `${e.clientX}px`;
 });
 
-// Optional: hide cursor when not moving
+// Hide cursor when idle
 let mouseTimeout;
 document.addEventListener("mousemove", () => {
   clearTimeout(mouseTimeout);
@@ -92,6 +113,8 @@ document.addEventListener("mousemove", () => {
     cursor.style.opacity = 0;
   }, 2000);
 });
+
+/* GSAP Animations */
 gsap.from(".slide-left", {
   x: -200,
   opacity: 0,
@@ -112,4 +135,3 @@ gsap.from(".scale-in", {
     toggleActions: "play none none reverse"
   }
 });
-

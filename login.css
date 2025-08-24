@@ -83,6 +83,7 @@ body::before {
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   z-index: 2;
+  overflow: hidden;
 }
 
 /* Gears */
@@ -195,34 +196,32 @@ body::before {
   background-repeat: no-repeat;
   background-size: cover;
 }
-/* Responsive Design */
+
+/* ✅ Responsive Design */
 @media (max-width: 768px) {
   .machine {
-    width: 90%;
-    padding: 2rem;
+    width: 95%;
+    padding: 1.5rem;
+    min-height: auto;
   }
 
   .login-form {
-    margin-top: 80px;
+    margin-top: 50px;
+    gap: 0.8rem;
   }
 
   .gear {
-    width: 40px;
-    height: 40px;
+    width: 35px;
+    height: 35px;
   }
 
-  .gear1 {
-    left: 35%;
-  }
-
-  .gear2 {
-    left: 55%;
-  }
+  .gear1 { left: 30%; }
+  .gear2 { left: 55%; }
 
   .hand {
-    right: 20px;
-    width: 50px;
-    height: 50px;
+    right: 10px;
+    width: 45px;
+    height: 45px;
   }
 
   .pulley {
@@ -230,31 +229,38 @@ body::before {
     top: 10px;
   }
 
-  .rope {
-    height: 100px;
-  }
+  .rope { height: 80px; }
 
-  .blob {
-    filter: blur(80px);
-  }
+  .blob { filter: blur(70px); }
 }
 
 @media (max-width: 480px) {
+  body {
+    overflow-y: auto;
+  }
+
   .machine {
-    padding: 1.5rem;
+    padding: 1rem;
+    border-radius: 15px;
+  }
+
+  .login-form {
+    margin-top: 30px;
+    gap: 0.6rem;
   }
 
   .login-form input,
   .login-form button {
     font-size: 14px;
+    padding: 10px;
   }
 
   .login-form button {
     padding: 10px;
+    border-radius: 40px;
   }
-}
-.move-on-scroll,
-.slide-left,
-.scale-in {
-  will-change: transform, opacity;
+
+  .gear { display: none; } /* hide gears on very small screens */
+  .hand { display: none; } /* hide robot hand */
+  .pulley { display: none; } /* hide pulley */
 }
