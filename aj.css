@@ -113,7 +113,9 @@ p  { font-size: 1.1rem; line-height: 1.6; margin-bottom: 1rem; }
   overflow: hidden;
   transition: background 0.3s, color 0.3s;
 }
-.outline-hover:hover { background: #fff; color: #000; }
+.outline-hover:hover { 
+ 
+   background: #fff; color: #000; }
 
 /* Responsive */
 @media (max-width: 992px) {
