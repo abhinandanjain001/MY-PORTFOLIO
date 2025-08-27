@@ -595,6 +595,12 @@
   justify-content: space-between; /* logo/brand left, menu right */
   align-items: center;
 }
+.logo {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--primary);
+}
+
 
 /* Mobile menu adjustments */
 @media (max-width: 992px) {
