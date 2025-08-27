@@ -2,167 +2,99 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>About Me — Abhinandan Jain</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About — Abhinandan Jain</title>
+  <meta name="description" content="About Abhinandan Jain — CSE Student, Developer, AI Enthusiast, Leader">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.css" />
+  <link rel="stylesheet" href="aj.css" />
   <style>
+    :root {
+      --primary-color: #0af;
+      --text-color: #f3ebeb;
+      --bg-color: #0d1117;
+      --card-bg: rgba(255, 255, 255, 0.05);
+      --accent-green: #0f0;
+    }
     body {
-      margin: 0;
-      font-family: monospace;
-      background: #0d0d0d;
-      color: #0f0;
+      font-family: 'Inter', sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      line-height: 1.6;
+      overflow-x: hidden;
     }
-    
-    .about {
-      padding: 120px 20px 40px;
-      max-width: 900px;
-      margin: auto;
-      text-align: center;
-    }
-    .about h1 {
-      font-size: 2.2rem;
-      margin-bottom: 20px;
-      color: cyan;
-    }
-    .about p {
-      font-size: 1.1rem;
-      line-height: 1.8;
-      color: #dcdcdc;
-      margin-bottom: 1.5rem;
-    }
-    .about-highlight {
-      color: #0f0;
-      font-weight: bold;
-    }
-    /* Base Responsive Setup */
-img {
-  max-width: 100%;
-  height: auto;
-}
-
-section {
-  padding: 4rem 2rem;
-}
-
-/* For Tablets (≤992px) */
-@media (max-width: 992px) {
-  h1 { font-size: 2.2rem; }
-  h2 { font-size: 1.6rem; }
-  p  { font-size: 1rem; }
-
-  .profile-frame img {
-    width: 160px;
-    height: 160px;
-  }
-
-  .projects-container {
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  }
-}
-
-/* For Phones (≤768px) */
-@media (max-width: 768px) {
-  h1 { font-size: 1.8rem; }
-  h2 { font-size: 1.4rem; }
-  p  { font-size: 0.95rem; }
-  section { padding: 3rem 1rem; }
-
-  /* Navbar responsive */
-  .navbar ul {
-    flex-direction: column;
-    background: rgba(0,0,0,0.95);
-    position: absolute;
-    top: 60px;
-    left: 0;
-    width: 100%;
-    display: none;
-    padding: 20px 0;
-  }
-
-  .navbar ul.active {
-    display: flex;
-  }
-
-  .menu-toggle {
-    display: block;
-  }
-}
-
-/* For Small Phones (≤480px) */
-@media (max-width: 480px) {
-  h1 { font-size: 1.5rem; }
-  h2 { font-size: 1.1rem; }
-  p  { font-size: 0.9rem; }
-
-  .profile-frame img {
-    width: 120px;
-    height: 120px;
-  }
-
-  .outline-hover {
-    width: 100%;
-    text-align: center;
-    font-size: 0.9rem;
-    padding: 0.6rem 1rem;
-  }
-}
-
   </style>
-  <link rel="stylesheet" href="aj.css">
 </head>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<body>
+<body data-scroll-container>
+
+  <!-- Background & Cursor -->
+  <canvas id="bg-canvas"></canvas>
+  <div class="custom-cursor"></div>
+
   <!-- Navbar -->
   <nav class="navbar">
-  <span class="menu-toggle">&#9776;</span> <!-- Hamburger Icon -->
-  <ul>
-    <li><a href="about.html">About</a></li>
-    <li><a href="family.html">Family</a></li>
-    <li><a href="work.html">Work</a></li>
-    <li><a href="education.html">Education</a></li>
-    <li><a href="Certificates.html">Certificates</a></li>
-    <li><a href="index.html">Home</a></li>
-  </ul>
-</nav>
+    <span class="menu-toggle" aria-label="Toggle menu">&#9776;</span>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="work.html">Work</a></li>
+      <li><a href="education.html">Education</a></li>
+      <li><a href="Certificates.html">Certificates</a></li>
+      <li><a href="family.html">Family</a></li>
+      <li><a href="login.html" class="client-login">Login</a></li>
+    </ul>
+  </nav>
 
+  <!-- Hero -->
+  <section data-scroll-section class="hero">
+    <h1 data-scroll data-scroll-speed="2">About Me</h1>
+    <p data-scroll data-scroll-speed="1">Developer. Innovator. Leader.</p>
+  </section>
 
-  <!-- About Section -->
-  <section class="about">
-    <h1>About Me</h1>
-    <p>
-      Hi, I'm <span class="about-highlight">Abhinandan Jain</span>, a passionate Computer Science Engineering student at 
-      <span class="about-highlight">JECRC Jaipur</span>. I specialize in 
-      <span class="about-highlight">C++</span>, <span class="about-highlight">Python</span>, 
-      <span class="about-highlight">Web Development</span>, and have growing expertise in 
-      <span class="about-highlight">AI & Machine Learning</span>.
+  <!-- Content -->
+  <section data-scroll-section class="about-section" style="padding: 60px 20px; max-width: 800px; margin: 0 auto;">
+    <h2 data-scroll data-scroll-speed="1">Who I Am</h2>
+    <p data-scroll data-scroll-speed="2">
+      I'm Abhinandan Jain, a B.Tech CSE student at JECRC with a passion for AI, web development, and problem-solving.
+      I love building impactful projects, mentoring peers, and pushing the boundaries of what technology can do.
     </p>
-    <p>
-      I’ve led teams in hackathons, built AI-driven solutions, and mentored peers in coding. 
-      My projects include a <span class="about-highlight">Virtual 3D Store</span>, 
-      an AI-powered <span class="about-highlight">Education Platform</span>, and a 
-      <span class="about-highlight">Weather Forecast App</span>.
+    <br>
+    <p data-scroll data-scroll-speed="2">
+      My journey includes national-level competitions like JEE Main (95.44 percentile), Mathematics Olympiad (Bronze), 
+      and hands-on experience in full-stack development, machine learning, and team leadership.
     </p>
-    <p>
-      Beyond coding, I am a leader, a lifelong learner, and an enthusiast who believes in 
-      solving real-world problems through technology. 🚀
+    <br>
+    <p data-scroll data-scroll-speed="2">
+      When I'm not coding, I enjoy reading, learning new tech, and spending time with family.
     </p>
   </section>
+
+  <!-- CTA -->
+  <section data-scroll-section class="cta" style="text-align: center; padding: 60px 20px;">
+    <a href="education.html" class="outline-hover" data-scroll data-scroll-speed="1">View My Education →</a>
   </section>
-  <script >
-    const menuToggle = document.querySelector(".menu-toggle");
-const navMenu = document.querySelector(".navbar ul");
 
-menuToggle.addEventListener("click", () => {
-  navMenu.classList.toggle("active");
-});
+  <!-- Footer -->
+  <footer class="footer" data-scroll-section>
+    <p>&copy; 2025 Abhinandan Jain. All rights reserved.</p>
+  </footer>
 
-// Close menu when clicking a link
-document.querySelectorAll(".navbar a").forEach(link => {
-  link.addEventListener("click", () => {
-    navMenu.classList.remove("active");
-  });
-});
-
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.js"></script>
+  <script>
+    const scroll = new LocomotiveScroll({
+      el: document.querySelector('[data-scroll-container]'),
+      smooth: true
+    });
+  </script>
+  <script src="aj.js" defer></script>
+  <script>
+    // Mobile Menu
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navMenu = document.querySelector('.navbar ul');
+    menuToggle?.addEventListener('click', () => navMenu.classList.toggle('active'));
   </script>
 </body>
 </html>

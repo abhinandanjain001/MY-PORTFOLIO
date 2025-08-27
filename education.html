@@ -2,190 +2,337 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Education — Abhinandan Jain</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta name="description" content="Education and academic achievements of Abhinandan Jain — B.Tech CSE, JEE Main 95.44%, Olympiad Medalist, and more.">
+  <meta name="keywords" content="Abhinandan Jain, Education, B.Tech, JEE Main, CBSE, Symbiosis, Mathematics Olympiad">
+  <meta name="author" content="Abhinandan Jain">
+
+  <!-- Open Graph / Social Sharing -->
+  <meta property="og:title" content="Education — Abhinandan Jain">
+  <meta property="og:description" content="Academic journey of a passionate CSE student and developer.">
+  <meta property="og:image" content="abhinandanjain.jpeg">
+  <meta property="og:url" content="https://yourdomain.com/education.html">
+  <meta property="og:type" content="profile">
+
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📚</text></svg>" type="image/svg+xml">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+
+  <!-- Locomotive Scroll CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.css" />
+
+  <!-- Main Styles -->
+  <link rel="stylesheet" href="aj.css">
+
+  <!-- Inline Critical CSS -->
   <style>
-    body{margin:0;font-family:monospace;background:#0d0d0d;color:#0f0}
-    /* Base Responsive Setup */
-img {
-  max-width: 100%;
-  height: auto;
-}
+    :root {
+      --primary-color: #0af;
+      --text-color: #f3ebeb;
+      --bg-color: #0d1117;
+      --card-bg: rgba(255, 255, 255, 0.05);
+      --accent-green: #0f0;
+      --border-green: rgba(0, 255, 0, 0.3);
+    }
 
-section {
-  padding: 4rem 2rem;
-}
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-/* For Tablets (≤992px) */
-@media (max-width: 992px) {
-  h1 { font-size: 2.2rem; }
-  h2 { font-size: 1.6rem; }
-  p  { font-size: 1rem; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      overflow-x: hidden;
+      line-height: 1.6;
+    }
 
-  .profile-frame img {
-    width: 160px;
-    height: 160px;
-  }
-
-  .projects-container {
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  }
-}
-
-/* For Phones (≤768px) */
-@media (max-width: 768px) {
-  h1 { font-size: 1.8rem; }
-  h2 { font-size: 1.4rem; }
-  p  { font-size: 0.95rem; }
-  section { padding: 3rem 1rem; }
-
-  /* Navbar responsive */
-  .navbar ul {
-    flex-direction: column;
-    background: rgba(0,0,0,0.95);
-    position: absolute;
-    top: 60px;
-    left: 0;
-    width: 100%;
-    display: none;
-    padding: 20px 0;
-  }
-
-  .navbar ul.active {
-    display: flex;
-  }
-
-  .menu-toggle {
-    display: block;
-  }
-}
-
-/* For Small Phones (≤480px) */
-@media (max-width: 480px) {
-  h1 { font-size: 1.5rem; }
-  h2 { font-size: 1.1rem; }
-  p  { font-size: 0.9rem; }
-
-  .profile-frame img {
-    width: 120px;
-    height: 120px;
-  }
-
-  .outline-hover {
-    width: 100%;
-    text-align: center;
-    font-size: 0.9rem;
-    padding: 0.6rem 1rem;
-  }
-}
-
-    
-    .edu{padding:120px 20px 40px;text-align:center}
-    .edu h1{font-size:2rem;margin-bottom:30px;color:cyan}
-    .timeline{max-width:1000px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px}
-    .card{background:#1a1a1a;border:1px solid #0f0;border-radius:12px;padding:18px;text-align:left;transition:transform .3s, box-shadow .3s}
-    .card:hover{transform:translateY(-6px);box-shadow:0 0 18px rgba(0,255,0,.4)}
-    .card h3{margin:0 0 6px;color:#0f0}
-    .card .meta{font-size:.9rem;color:#9fe89f;margin-bottom:10px}
-    .card p{color:#cfcfcf;line-height:1.5}
-    .tag{display:inline-block;border:1px solid #0f0;border-radius:8px;padding:3px 8px;margin:6px 6px 0 0;font-size:.85rem;color:#0f0}
-    #bg-canvas{position:fixed;inset:0;width:100%;height:100%;z-index:-1;background:#000}
+    #main {
+      min-height: 100vh;
+    }
   </style>
 </head>
-<link rel="stylesheet" href="aj.css" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <body>
+
+  <!-- Animated Background -->
   <canvas id="bg-canvas"></canvas>
+  <div class="custom-cursor"></div>
 
   <!-- Navbar -->
   <nav class="navbar">
-  <span class="menu-toggle">&#9776;</span> <!-- Hamburger Icon -->
-  <ul>
-    <li><a href="about.html">About</a></li>
-    <li><a href="family.html">Family</a></li>
-    <li><a href="work.html">Work</a></li>
-    <li><a href="education.html">Education</a></li>
-    <li><a href="Certificates.html">Certificates</a></li>
-    <li><a href="index.html">Home</a></li>
-  </ul>
-</nav>
+    <span class="menu-toggle" aria-label="Toggle navigation menu">&#9776;</span>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="RenderCV_EngineeringResumes_Theme.pdf" target="_blank">Resume</a></li>
+      <li><a href="work.html">Projects</a></li>
+      <li><a href="education.html">Education</a></li>
+      <li><a href="Certificates.html">Certificates</a></li>
+      <li><a href="family.html">Family</a></li>
+      <li><a href="login.html" class="client-login">Client Login</a></li>
+    </ul>
+  </nav>
 
-
-  <!-- Education Section -->
-  <section class="edu">
-    <h1>My Education</h1>
-    <div class="timeline">
-
-      <div class="card">
+  <!-- Hero Section -->
+  
+  <!-- Education Timeline -->
+  <section data-scroll-section id="education" class="education-section">
+    <h2 data-scroll data-scroll-speed="1">Academic & Competitive Achievements</h2>
+    <div class="timeline-grid">
+      
+      <!-- B.Tech -->
+      <article class="edu-card" data-scroll data-scroll-effect="blur">
         <h3>B.Tech — Computer Science & Engineering</h3>
         <div class="meta">JECRC, Jaipur • 2023–2027</div>
-        <p>Cumulative SGPA: 9.03. Focus on DSA, DBMS, AI/ML, and full-stack development.</p>
-        <div><span class="tag">C++</span><span class="tag">Python</span><span class="tag">JS</span><span class="tag">MySQL</span></div>
-      </div>
+        <p>Cumulative SGPA: <strong>9.03</strong>. Focused on DSA, DBMS, AI/ML, and full-stack development.</p>
+        <div class="tags">
+          <span class="tag">C++</span>
+          <span class="tag">Python</span>
+          <span class="tag">JavaScript</span>
+          <span class="tag">MySQL</span>
+          <span class="tag">DSA</span>
+        </div>
+      </article>
 
-      <div class="card">
+      <!-- Symbiosis -->
+      <article class="edu-card" data-scroll data-scroll-effect="blur">
         <h3>Symbiosis International University, Pune</h3>
-        <div class="meta">Grade: A++</div>
-        <p>Completed coursework with distinction, strengthening fundamentals in CS and applied learning.</p>
-        <div><span class="tag">Academic Excellence</span><span class="tag">A++</span></div>
-      </div>
+        <div class="meta">Grade: A++ • Excellence in CS Fundamentals</div>
+        <p>Completed advanced coursework with distinction, strengthening applied computer science knowledge.</p>
+        <div class="tags">
+          <span class="tag">Academic Excellence</span>
+          <span class="tag">A++</span>
+        </div>
+      </article>
 
-      <div class="card">
-        <h3>Senior Secondary (12th Board)</h3>
-        <div class="meta">CBSE • 2022</div>
-        <p>Percentage: 91% • PCM with Computer Science.</p>
-        <div><span class="tag">Physics</span><span class="tag">Chemistry</span><span class="tag">Maths</span><span class="tag">CS</span></div>
-      </div>
+      <!-- 12th Board -->
+      <article class="edu-card" data-scroll data-scroll-effect="blur">
+        <h3>Senior Secondary (CBSE 12th)</h3>
+        <div class="meta">CBSE • 2022 • PCM + Computer Science</div>
+        <p>Scored <strong>91%</strong> with strong performance in Mathematics and Computer Science.</p>
+        <div class="tags">
+          <span class="tag">Physics</span>
+          <span class="tag">Chemistry</span>
+          <span class="tag">Maths</span>
+          <span class="tag">CS</span>
+        </div>
+      </article>
 
-      <div class="card">
-        <h3>Secondary (10th Board)</h3>
+      <!-- 10th Board -->
+      <article class="edu-card" data-scroll data-scroll-effect="blur">
+        <h3>Secondary (CBSE 10th)</h3>
         <div class="meta">CBSE • 2020</div>
-        <p>Percentage: 90.83% • Strong foundation in science & mathematics.</p>
-        <div><span class="tag">Foundations</span><span class="tag">Logic</span></div>
-      </div>
+        <p>Scored <strong>90.83%</strong> — built a solid foundation in logic, science, and mathematics.</p>
+        <div class="tags">
+          <span class="tag">Foundations</span>
+          <span class="tag">Logic</span>
+        </div>
+      </article>
 
-      <div class="card">
+      <!-- JEE Main -->
+      <article class="edu-card" data-scroll data-scroll-effect="blur">
         <h3>JEE Main 2023</h3>
-        <div class="meta">Percentile: 95.44</div>
-        <p>Qualified national-level engineering entrance exam with high percentile.</p>
-        <div><span class="tag">Competitive Exam</span></div>
-      </div>
+        <div class="meta">Percentile: 95.44 • National Rank: Top 5%</div>
+        <p>Qualified one of India’s toughest engineering entrance exams with a high percentile.</p>
+        <div class="tags">
+          <span class="tag">Competitive Exam</span>
+          <span class="tag">Engineering</span>
+        </div>
+      </article>
 
-      <div class="card">
-        <h3>BITS Pilani Entrance Exam</h3>
-        <p>Successfully appeared for BITSAT as part of engineering entrance pathway.</p>
-        <div><span class="tag">BITSAT</span></div>
-      </div>
+      <!-- BITSAT -->
+      <article class="edu-card" data-scroll data-scroll-effect="blur">
+        <h3>BITSAT Entrance Exam</h3>
+        <div class="meta">Pilani Institute • Engineering Pathway</div>
+        <p>Successfully appeared for BITSAT, demonstrating readiness for elite technical education.</p>
+        <div class="tags">
+          <span class="tag">BITSAT</span>
+          <span class="tag">Engineering</span>
+        </div>
+      </article>
 
-      <div class="card">
+      <!-- Math Olympiad -->
+      <article class="edu-card" data-scroll data-scroll-effect="blur">
         <h3>Mathematics Olympiad</h3>
-        <div class="meta">Bronze Medalist</div>
-        <p>Awarded Bronze Medal at Mathematics Olympiad for problem-solving excellence.</p>
-        <div><span class="tag">Olympiad</span><span class="tag">Mathematics</span></div>
-      </div>
+        <div class="meta">Bronze Medalist • Problem-Solving Excellence</div>
+        <p>Awarded Bronze Medal for exceptional logical reasoning and mathematical creativity.</p>
+        <div class="tags">
+          <span class="tag">Olympiad</span>
+          <span class="tag">Mathematics</span>
+          <span class="tag">Logic</span>
+        </div>
+      </article>
 
     </div>
   </section>
 
-  <script src="script.js"></script>
-</section>
-  <script >
-    const menuToggle = document.querySelector(".menu-toggle");
-const navMenu = document.querySelector(".navbar ul");
+  <!-- Call to Action -->
+  <section data-scroll-section class="cta">
+    <p data-scroll data-scroll-speed="1">
+      <a href="Certificates.html" class="outline-hover">View My Certifications →</a>
+    </p>
+  </section>
 
-menuToggle.addEventListener("click", () => {
-  navMenu.classList.toggle("active");
-});
+  <!-- Footer -->
+  <footer class="footer" data-scroll-section>
+    <p>&copy; 2025 Abhinandan Jain. Crafted with curiosity.</p>
+  </footer>
 
-// Close menu when clicking a link
-document.querySelectorAll(".navbar a").forEach(link => {
-  link.addEventListener("click", () => {
-    navMenu.classList.remove("active");
+  <!-- Locomotive Scroll Container -->
+  <div id="main" data-scroll-container></div>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.js"></script>
+  <script>
+    // Initialize Locomotive Scroll
+    document.addEventListener("DOMContentLoaded", () => {
+      const scroll = new LocomotiveScroll({
+        el: document.querySelector('[data-scroll-container]'),
+        smooth: true,
+        smartphone: { smooth: true },
+        tablet: { smooth: true }
+      });
+
+      window.addEventListener('resize', () => scroll.update());
+    });
+  </script>
+
+  <!-- Custom JS -->
+  <script src="aj.js"></script>
+
+  <!-- Mobile Menu Toggle -->
+  <script>
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navMenu = document.querySelector('.navbar ul');
+    
+    if (menuToggle && navMenu) {
+      menuToggle.addEventListener('click', () => {
+        navMenu.classList.toggle('active');
+        menuToggle.classList.toggle('active');
+      });
+    }
+
+    document.querySelectorAll('.navbar a').forEach(link => {
+      link.addEventListener('click', () => {
+        navMenu.classList.remove('active');
+        menuToggle.classList.remove('active');
+      });
+    });
+    // ===== Canvas Background: Starfield =====
+const canvas = document.getElementById("bg-canvas");
+const ctx = canvas?.getContext("2d");
+
+if (ctx) {
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+
+  let stars = [];
+  const STAR_COUNT = 200;
+
+  function initStars() {
+    stars = [];
+    for (let i = 0; i < STAR_COUNT; i++) {
+      stars.push({
+        x: Math.random() * canvas.width,
+        y: Math.random() * canvas.height,
+        z: Math.random() * canvas.width,
+      });
+    }
+  }
+
+  function drawStars() {
+    ctx.fillStyle = "#0d1117";
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+    ctx.fillStyle = "#ffffff";
+
+    for (const star of stars) {
+      star.z -= 1;
+      if (star.z <= 0) star.z = canvas.width;
+
+      const k = 128.0 / star.z;
+      const px = star.x * k + canvas.width / 2;
+      const py = star.y * k + canvas.height / 2;
+      const size = (1 - star.z / canvas.width) * 3;
+
+      if (px >= 0 && px <= canvas.width && py >= 0 && py <= canvas.height) {
+        ctx.beginPath();
+        ctx.arc(px, py, size, 0, Math.PI * 2);
+        ctx.fill();
+      }
+    }
+  }
+
+  function animateStars() {
+    drawStars();
+    requestAnimationFrame(animateStars);
+  }
+
+  initStars();
+  animateStars();
+
+  window.addEventListener("resize", () => {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+    initStars();
   });
-});
+}
 
+// ===== Matrix Rain Effect =====
+const matrixCanvas = document.getElementById("matrix-canvas");
+const matrixCtx = matrixCanvas?.getContext("2d");
+
+if (matrixCtx) {
+  matrixCanvas.width = window.innerWidth;
+  matrixCanvas.height = window.innerHeight;
+
+  const matrixChars = "アァカサタナハマヤャラワガザダバパイィキシチニヒミリヰギジヂビピウゥクスツヌフムユュルグズブヅプエェケセテネヘメレヱゲゼデベペオォコソトノホモヨョロヲゴゾドボポヴッン0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+  const fontSize = 14;
+  const columns = matrixCanvas.width / fontSize;
+  const drops = Array(Math.floor(columns)).fill(1);
+
+  function drawMatrix() {
+    matrixCtx.fillStyle = 'rgba(13, 17, 23, 0.05)';
+    matrixCtx.fillRect(0, 0, matrixCanvas.width, matrixCanvas.height);
+    matrixCtx.fillStyle = '#00ff9d';
+    matrixCtx.font = `${fontSize}px monospace`;
+
+    for (let i = 0; i < drops.length; i++) {
+      const char = matrixChars.charAt(Math.floor(Math.random() * matrixChars.length));
+      matrixCtx.fillText(char, i * fontSize, drops[i] * fontSize);
+
+      if (drops[i] * fontSize > matrixCanvas.height && Math.random() > 0.975) {
+        drops[i] = 0;
+      }
+      drops[i]++;
+    }
+  }
+
+  setInterval(drawMatrix, 35);
+
+  window.addEventListener("resize", () => {
+    matrixCanvas.width = window.innerWidth;
+    matrixCanvas.height = window.innerHeight;
+  });
+}
+
+// ===== Custom Cursor =====
+const cursor = document.querySelector(".custom-cursor");
+if (cursor) {
+  let timeout;
+
+  document.addEventListener("mousemove", (e) => {
+    cursor.style.left = `${e.clientX}px`;
+    cursor.style.top = `${e.clientY}px`;
+    cursor.style.opacity = 1;
+    clearTimeout(timeout);
+    timeout = setTimeout(() => cursor.style.opacity = 0, 2000);
+  });
+}
   </script>
 </body>
 </html>

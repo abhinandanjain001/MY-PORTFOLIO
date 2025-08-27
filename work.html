@@ -2,192 +2,118 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Work — Abhinandan Jain</title>
+  <meta name="description" content="Projects by Abhinandan Jain — AI, Web Dev, Full-Stack Applications">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.css" />
   <link rel="stylesheet" href="aj.css" />
-
-  <link rel="stylesheet" href="style.css" />
   <style>
+    :root {
+      --primary-color: #0af;
+      --text-color: #f3ebeb;
+      --bg-color: #0d1117;
+      --card-bg: rgba(255, 255, 255, 0.05);
+      --accent-green: #0f0;
+    }
     body {
-      margin: 0;
-      font-family: monospace;
-      background: #0d0d0d;
-      color: #0f0;
+      font-family: 'Inter', sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      line-height: 1.6;
+      overflow-x: hidden;
     }
-    
-    .work {
-      padding: 120px 20px 40px;
-      max-width: 1000px;
-      margin: auto;
-      text-align: center;
-    }
-    .work h1 {
-      font-size: 2.2rem;
-      margin-bottom: 20px;
-      color: cyan;
-    }
-    .work-container {
+    .projects-container {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 20px;
-      margin-top: 30px;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+      margin-top: 40px;
     }
-    .work-card {
-      background: #1a1a1a;
-      border: 1px solid #0f0;
+    .project-card {
+      background: var(--card-bg);
+      border: 1px solid var(--accent-green);
       border-radius: 12px;
       padding: 20px;
-      text-align: left;
-      transition: transform 0.3s, box-shadow 0.3s;
+      transition: transform 0.3s ease;
     }
-    .work-card:hover {
+    .project-card:hover {
       transform: translateY(-6px);
-      box-shadow: 0 0 18px rgba(0, 255, 0, 0.4);
     }
-    .work-card h3 {
-      margin-bottom: 10px;
-      color: #0f0;
+    .project-card h3 {
+      color: var(--accent-green);
+      margin-bottom: 8px;
     }
-    .work-card p {
-      color: #cfcfcf;
-      font-size: 0.95rem;
-      line-height: 1.6;
-    }
-    /* Base Responsive Setup */
-img {
-  max-width: 100%;
-  height: auto;
-}
-
-section {
-  padding: 4rem 2rem;
-}
-
-/* For Tablets (≤992px) */
-@media (max-width: 992px) {
-  h1 { font-size: 2.2rem; }
-  h2 { font-size: 1.6rem; }
-  p  { font-size: 1rem; }
-
-  .profile-frame img {
-    width: 160px;
-    height: 160px;
-  }
-
-  .projects-container {
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  }
-}
-
-/* For Phones (≤768px) */
-@media (max-width: 768px) {
-  h1 { font-size: 1.8rem; }
-  h2 { font-size: 1.4rem; }
-  p  { font-size: 0.95rem; }
-  section { padding: 3rem 1rem; }
-
-  /* Navbar responsive */
-  .navbar ul {
-    flex-direction: column;
-    background: rgba(0,0,0,0.95);
-    position: absolute;
-    top: 60px;
-    left: 0;
-    width: 100%;
-    display: none;
-    padding: 20px 0;
-  }
-
-  .navbar ul.active {
-    display: flex;
-  }
-
-  .menu-toggle {
-    display: block;
-  }
-}
-
-/* For Small Phones (≤480px) */
-@media (max-width: 480px) {
-  h1 { font-size: 1.5rem; }
-  h2 { font-size: 1.1rem; }
-  p  { font-size: 0.9rem; }
-
-  .profile-frame img {
-    width: 120px;
-    height: 120px;
-  }
-
-  .outline-hover {
-    width: 100%;
-    text-align: center;
-    font-size: 0.9rem;
-    padding: 0.6rem 1rem;
-  }
-}
-
   </style>
 </head>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<body>
-  <!-- Navbar -->
-   
+<body data-scroll-container>
+
+  <canvas id="bg-canvas"></canvas>
+  <div class="custom-cursor"></div>
 
   <nav class="navbar">
-  <span class="menu-toggle">&#9776;</span> <!-- Hamburger Icon -->
-  <ul>
-    <li><a href="about.html">About</a></li>
-    <li><a href="family.html">Family</a></li>
-    <li><a href="work.html">Work</a></li>
-    <li><a href="education.html">Education</a></li>
-    <li><a href="Certificates.html">Certificates</a></li>
-    <li><a href="index.html">Home</a></li>
-  </ul>
-</nav>
+    <span class="menu-toggle">&#9776;</span>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="work.html">Work</a></li>
+      <li><a href="education.html">Education</a></li>
+      <li><a href="Certificates.html">Certificates</a></li>
+      <li><a href="family.html">Family</a></li>
+      <li><a href="login.html" class="client-login">Login</a></li>
+    </ul>
+  </nav>
 
+  <section data-scroll-section class="hero">
+    <h1 data-scroll data-scroll-speed="2">My Projects</h1>
+    <p data-scroll data-scroll-speed="1">Innovation in code, AI, and user experience.</p>
+  </section>
 
-  <!-- Work Section -->
-  <section class="work">
-    <h1>My Work Experience & Projects</h1>
-    <div class="work-container">
-      <div class="work-card">
-        <h3>Team Leader — Programmers' Playground</h3>
-        <p>Coordinated and mentored peers in a competitive coding event, helping participants improve problem-solving and coding skills.</p>
+  <section data-scroll-section class="projects-section" style="padding: 60px 20px; max-width: 1200px; margin: 0 auto;">
+    <h2 data-scroll data-scroll-speed="1">Featured Work</h2>
+    <div class="projects-container">
+      <div class="project-card" data-scroll data-scroll-speed="2">
+        <h3>VIRTUAL 3D Store</h3>
+        <p>AI-powered virtual reality shopping experience.</p>
+        <a href="https://retail-vision-guide.lovable.app" target="_blank" rel="noopener">View Project →</a>
       </div>
-      <div class="work-card">
-        <h3>RemoteAudit AI — EY Internship Project</h3>
-        <p>Developed a 7-slide AI-powered audit tool presentation for auditors to automate compliance, risk detection, and process validation.</p>
+      <div class="project-card" data-scroll data-scroll-speed="2">
+        <h3>Weather App</h3>
+        <p>5-day forecast with real-time data.</p>
+        <a href="https://today-weather-io.vercel.app/" target="_blank" rel="noopener">View Project →</a>
       </div>
-      <div class="work-card">
-        <h3>Portfolio Website</h3>
-        <p>Designed a responsive personal portfolio website with interactive animations, neon-dark UI, and project showcases.</p>
+      <div class="project-card" data-scroll data-scroll-speed="2">
+        <h3>Education GURU</h3>
+        <p>AI-integrated learning platform.</p>
+        <a href="https://educationguru.vercel.app/" target="_blank" rel="noopener">Visit Site →</a>
       </div>
-      <div class="work-card">
-        <h3>AI Assistant — Jarvis AI</h3>
-        <p>Created a smart AI assistant capable of performing daily automation tasks and responding to voice commands.</p>
-      </div>
-      <div class="work-card">
-        <h3>Exploratory Data Analysis — Tata iQ</h3>
-        <p>Performed EDA on Geldium’s dataset to identify delinquency risks and improve data quality insights.</p>
+      <div class="project-card" data-scroll data-scroll-speed="2">
+        <h3>Jarvis AI</h3>
+        <p>Personal assistant with voice & task automation.</p>
+        <a href="https://github.com/abhinandanjain001/jarvis-ai" target="_blank" rel="noopener">Code on GitHub →</a>
       </div>
     </div>
   </section>
+
+  <section data-scroll-section class="cta" style="text-align: center; padding: 60px 20px;">
+    <a href="Certificates.html" class="outline-hover" data-scroll data-scroll-speed="1">View Certifications →</a>
   </section>
-  <script >
-    const menuToggle = document.querySelector(".menu-toggle");
-const navMenu = document.querySelector(".navbar ul");
 
-menuToggle.addEventListener("click", () => {
-  navMenu.classList.toggle("active");
-});
+  <footer class="footer" data-scroll-section>
+    <p>&copy; 2025 Abhinandan Jain. All rights reserved.</p>
+  </footer>
 
-// Close menu when clicking a link
-document.querySelectorAll(".navbar a").forEach(link => {
-  link.addEventListener("click", () => {
-    navMenu.classList.remove("active");
-  });
-});
-
+  <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.js"></script>
+  <script>
+    const scroll = new LocomotiveScroll({
+      el: document.querySelector('[data-scroll-container]'),
+      smooth: true
+    });
+  </script>
+  <script src="aj.js" defer></script>
+  <script>
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navMenu = document.querySelector('.navbar ul');
+    menuToggle?.addEventListener('click', () => navMenu.classList.toggle('active'));
   </script>
 </body>
 </html>

@@ -1,135 +1,138 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Login</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login — Abhinandan Jain</title>
+  <meta name="description" content="Client login portal for authorized access.">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.css" />
+  <link rel="stylesheet" href="aj.css" />
   <style>
-    *{margin:0;padding:0;box-sizing:border-box;font-family:Arial, sans-serif;}
-    body{
-      display:flex;justify-content:center;align-items:center;
-      min-height:100vh;background:#0d0d0d;color:#fff;
+    :root {
+      --primary-color: #0af;
+      --text-color: #f3ebeb;
+      --bg-color: #0d1117;
+      --input-bg: #1a1a1a;
+      --accent-green: #0f0;
     }
-    /* Base Responsive Setup */
-img {
-  max-width: 100%;
-  height: auto;
-}
-
-section {
-  padding: 4rem 2rem;
-}
-
-/* For Tablets (≤992px) */
-@media (max-width: 992px) {
-  h1 { font-size: 2.2rem; }
-  h2 { font-size: 1.6rem; }
-  p  { font-size: 1rem; }
-
-  .profile-frame img {
-    width: 160px;
-    height: 160px;
-  }
-
-  .projects-container {
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  }
-}
-
-/* For Phones (≤768px) */
-@media (max-width: 768px) {
-  h1 { font-size: 1.8rem; }
-  h2 { font-size: 1.4rem; }
-  p  { font-size: 0.95rem; }
-  section { padding: 3rem 1rem; }
-
-  /* Navbar responsive */
-  .navbar ul {
-    flex-direction: column;
-    background: rgba(0,0,0,0.95);
-    position: absolute;
-    top: 60px;
-    left: 0;
-    width: 100%;
-    display: none;
-    padding: 20px 0;
-  }
-
-  .navbar ul.active {
-    display: flex;
-  }
-
-  .menu-toggle {
-    display: block;
-  }
-}
-
-/* For Small Phones (≤480px) */
-@media (max-width: 480px) {
-  h1 { font-size: 1.5rem; }
-  h2 { font-size: 1.1rem; }
-  p  { font-size: 0.9rem; }
-
-  .profile-frame img {
-    width: 120px;
-    height: 120px;
-  }
-
-  .outline-hover {
-    width: 100%;
-    text-align: center;
-    font-size: 0.9rem;
-    padding: 0.6rem 1rem;
-  }
-}
-
-    .form-box{
-      width:100%;max-width:400px;background:#1c1c1c;
-      padding:30px;border-radius:12px;box-shadow:0 0 20px rgba(0,0,0,0.5);
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      line-height: 1.6;
+      overflow-x: hidden;
     }
-    h2{text-align:center;margin-bottom:20px;color:#00e5ff;}
-    .input-group{margin-bottom:15px;}
-    .input-group label{display:block;margin-bottom:5px;font-size:14px;}
-    .input-group input{
-      width:100%;padding:10px;border:none;border-radius:8px;
-      outline:none;background:#2b2b2b;color:#fff;
+    .login-container {
+      max-width: 400px;
+      margin: 100px auto;
+      padding: 30px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--accent-green);
+      border-radius: 12px;
     }
-    .btn{
-      width:100%;padding:12px;background:#00e5ff;color:#000;
-      font-weight:bold;border:none;border-radius:8px;cursor:pointer;
-      transition:0.3s;
+    .login-container h2 {
+      color: var(--accent-green);
+      margin-bottom: 20px;
+      text-align: center;
     }
-    .btn:hover{background:#00bcd4;}
-    .switch{text-align:center;margin-top:15px;font-size:14px;}
-    .switch a{color:#00e5ff;text-decoration:none;}
+    .form-group {
+      margin-bottom: 20px;
+    }
+    .form-group label {
+      display: block;
+      margin-bottom: 8px;
+      color: #9fe89f;
+    }
+    .form-group input {
+      width: 100%;
+      padding: 10px;
+      background: var(--input-bg);
+      border: 1px solid var(--accent-green);
+      color: var(--text-color);
+      border-radius: 6px;
+      font-family: 'Inter', sans-serif;
+    }
+    .login-btn {
+      width: 100%;
+      padding: 12px;
+      background: var(--accent-green);
+      color: #000;
+      border: none;
+      border-radius: 6px;
+      font-weight: 600;
+      cursor: pointer;
+      font-family: 'Inter', sans-serif;
+    }
+    .login-btn:hover {
+      background: #00ff41;
+    }
   </style>
 </head>
-<body>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<body data-scroll-container>
 
-  <div class="form-box">
-    <h2>Login</h2>
-    <form onsubmit="redirect(event)">
-      <div class="input-group">
-        <label>Email</label>
-        <input type="email" required>
-      </div>
-      <div class="input-group">
-        <label>Password</label>
-        <input type="password" required>
-      </div>
-      <button type="submit" class="btn">Login</button>
-      <div class="switch">
-        Don't have an account? <a href="signup.html">Sign Up</a>
-      </div>
-    </form>
-  </div>
+  <canvas id="bg-canvas"></canvas>
+  <div class="custom-cursor"></div>
 
+  <nav class="navbar">
+    <span class="menu-toggle">&#9776;</span>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="work.html">Work</a></li>
+      <li><a href="education.html">Education</a></li>
+      <li><a href="Certificates.html">Certificates</a></li>
+      <li><a href="family.html">Family</a></li>
+      <li><a href="login.html" class="client-login active">Login</a></li>
+    </ul>
+  </nav>
+
+  <section data-scroll-section class="hero">
+    <h1 data-scroll data-scroll-speed="2">Client Login</h1>
+    <p data-scroll data-scroll-speed="1">Secure access to private resources.</p>
+  </section>
+
+  <section data-scroll-section style="padding: 60px 20px;">
+    <div class="login-container" data-scroll data-scroll-speed="2">
+      <h2>Sign In</h2>
+      <form id="login-form">
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" required />
+        </div>
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" id="password" required />
+        </div>
+        <button type="submit" class="login-btn">Log In</button>
+      </form>
+      <p style="text-align: center; margin-top: 15px; font-size: 0.9rem; color: #9fe89f;">
+        Demo: Use any email & password to proceed.
+      </p>
+    </div>
+  </section>
+
+  <footer class="footer" data-scroll-section>
+    <p>&copy; 2025 Abhinandan Jain. All rights reserved.</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.js"></script>
   <script>
-    function redirect(e){
+    const scroll = new LocomotiveScroll({
+      el: document.querySelector('[data-scroll-container]'),
+      smooth: true
+    });
+  </script>
+  <script src="aj.js" defer></script>
+  <script>
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navMenu = document.querySelector('.navbar ul');
+    menuToggle?.addEventListener('click', () => navMenu.classList.toggle('active'));
+    
+    document.getElementById('login-form')?.addEventListener('submit', (e) => {
       e.preventDefault();
-      window.location.href="index.html";
-    }
+      alert('Login successful! (Demo mode)');
+    });
   </script>
 </body>
 </html>
