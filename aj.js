@@ -57,12 +57,13 @@ function drawLogo() {
 }
 
 function animateBackground() {
-  drawStars();
-  drawLogo(); // draw glowing AJ logo in center
+  drawStars(); 
+  
   requestAnimationFrame(animateBackground);
 }
 
 initStars();
+drawLogo(); // ✅ draw AJ logo only once (static)
 animateBackground();
 
 window.addEventListener("resize", () => {
