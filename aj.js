@@ -1,3 +1,6 @@
+/* ===============================
+   STARFIELD BACKGROUND + LOGO
+================================= */
 const canvas = document.getElementById("bg-canvas");
 const ctx = canvas.getContext("2d");
 
@@ -58,7 +61,6 @@ function drawLogo() {
 
 function animateBackground() {
   drawStars(); 
-  
   requestAnimationFrame(animateBackground);
 }
 
@@ -70,9 +72,12 @@ window.addEventListener("resize", () => {
   canvas.width = window.innerWidth;
   canvas.height = window.innerHeight;
   initStars();
+  drawLogo();
 });
 
-/* Ripple Effect */
+/* ===============================
+   RIPPLE EFFECT
+================================= */
 document.querySelectorAll('.click-animate').forEach(el => {
   el.addEventListener('click', function (e) {
     const ripple = document.createElement('span');
@@ -97,7 +102,9 @@ document.querySelectorAll('.click-animate').forEach(el => {
   });
 });
 
-/* Custom Cursor */
+/* ===============================
+   CUSTOM CURSOR
+================================= */
 const cursor = document.querySelector(".custom-cursor");
 
 document.addEventListener("mousemove", (e) => {
@@ -115,7 +122,9 @@ document.addEventListener("mousemove", () => {
   }, 2000);
 });
 
-/* GSAP Animations */
+/* ===============================
+   GSAP SCROLL ANIMATIONS
+================================= */
 gsap.from(".slide-left", {
   x: -200,
   opacity: 0,
@@ -134,5 +143,34 @@ gsap.from(".scale-in", {
     trigger: ".scale-in",
     start: "top 90%",
     toggleActions: "play none none reverse"
+  }
+});
+
+/* ===============================
+   PRELOADER (SHOW ONLY ONCE)
+================================= */
+document.addEventListener("DOMContentLoaded", () => {
+  const preloader = document.getElementById("preloader");
+  const loadingScreen = document.getElementById("loading-screen");
+
+  // If already shown in this session → hide instantly
+  if (sessionStorage.getItem("preloaderShown")) {
+    preloader.style.display = "none";
+    loadingScreen.style.display = "none";
+  } else {
+    // First time → show animation
+    window.addEventListener("load", () => {
+      setTimeout(() => {
+        preloader.style.opacity = "0";
+        loadingScreen.style.opacity = "0";
+        setTimeout(() => {
+          preloader.style.display = "none";
+          loadingScreen.style.display = "none";
+        }, 800);
+      }, 1500); // ⏳ adjust delay
+    });
+
+    // Mark as shown
+    sessionStorage.setItem("preloaderShown", "true");
   }
 });

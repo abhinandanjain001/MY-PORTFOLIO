@@ -47,11 +47,12 @@
       <span class="menu-toggle">&#9776;</span> <!-- Hamburger Icon -->
       <ul>
         <li><a href="about.html">About</a></li>
-        <li><a href="family.html">Family</a></li>
+        <li><a href="RenderCV_EngineeringResumes_Theme.pdf">Resume</a></li>
         <li><a href="work.html">Work</a></li>
         <li><a href="education.html">Education</a></li>
         <li><a href="Certificates.html">Certificates</a></li>
         <li><a href="index.html">Home</a></li>
+        <li><a href="family.html">Family</a></li>
       </ul>
     </nav>
 
@@ -177,21 +178,33 @@
     });
 
     // Navbar toggle for mobile
-    document.addEventListener("DOMContentLoaded", () => {
-      const menuToggle = document.querySelector(".menu-toggle");
-      const navMenu = document.querySelector(".navbar ul");
+   /* ===============================
+   PRELOADER (SHOW ONLY ONCE PER VISIT)
+================================= */
+document.addEventListener("DOMContentLoaded", () => {
+  const preloader = document.getElementById("preloader");
+  const loadingScreen = document.getElementById("loading-screen");
 
-      menuToggle.addEventListener("click", () => {
-        navMenu.classList.toggle("active");
-      });
-
-      // Close menu when clicking a link
-      document.querySelectorAll(".navbar a").forEach(link => {
-        link.addEventListener("click", () => {
-          navMenu.classList.remove("active");
-        });
-      });
+  // ✅ Check if preloader was already shown in this session
+  if (sessionStorage.getItem("preloader-shown")) {
+    preloader.style.display = "none";
+    loadingScreen.style.display = "none";
+  } else {
+    window.addEventListener("load", () => {
+      setTimeout(() => {
+        preloader.style.opacity = "0";
+        loadingScreen.style.opacity = "0";
+        setTimeout(() => {
+          preloader.style.display = "none";
+          loadingScreen.style.display = "none";
+          // ✅ Mark preloader as shown
+          sessionStorage.setItem("preloader-shown", "true");
+        }, 800);
+      }, 3000); // delay to show animation
     });
+  }
+});
+
   </script>
 </body>
 </html>
