@@ -349,3 +349,10 @@ document.addEventListener("DOMContentLoaded", () => {
 window.addEventListener("load", () => {
   // Optional: Hide skeleton loaders or enable transitions
 });
+const menuToggle = document.querySelector(".menu-toggle");
+const navLinks = document.querySelector(".navbar ul");
+
+menuToggle.addEventListener("click", () => {
+  console.log("Menu toggle clicked ✅"); // debug
+  navLinks.classList.toggle("active");
+});
