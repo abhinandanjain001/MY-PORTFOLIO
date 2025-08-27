@@ -3,17 +3,79 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Abhinandan Jain — Portfolio</title>
-
+  <title>Abhinandan Jain — Portfolio | Web Developer & AI Enthusiast</title>
+  <meta name="description" content="Portfolio of Abhinandan Jain — Web Developer, Innovator, and Tech Enthusiast with expertise in AI, Python, and JavaScript.">
+  <meta name="keywords" content="Abhinandan Jain, Portfolio, Web Developer, AI Projects, Python Developer, JavaScript, C++">
+  <meta name="author" content="Abhinandan Jain">
+  
+  <!-- Open Graph for social sharing -->
+  <meta property="og:title" content="Abhinandan Jain — Portfolio">
+  <meta property="og:description" content="Explore my projects, skills, and achievements in web development and AI.">
+  <meta property="og:image" content="abhinandanjain.jpeg">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://yourdomain.com">
+  
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>👨‍💻</text></svg>" type="image/svg+xml">
+  
+  <!-- Preload critical resources -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.css" as="style">
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" as="style">
+  
   <!-- Locomotive Scroll -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.css" />
-
+  
   <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;900&display=swap" rel="stylesheet" />
-
-  <!-- Custom CSS -->
-  <link rel="stylesheet" href="aj.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet" />
+  
+  <!-- Inline critical CSS -->
+  <style>
+    /* Critical CSS to prevent render blocking */
+    :root {
+      --primary-color: #0af;
+      --text-color: #f3ebeb;
+      --bg-color: #0d1117;
+      --card-bg: rgba(255, 255, 255, 0.05);
+    }
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      overflow-x: hidden;
+      line-height: 1.6;
+    }
+    
+    #preloader, #loading-screen {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 9999;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: var(--bg-color);
+      transition: opacity 0.8s ease;
+    }
+    
+    /* Additional critical styles would go here */
+  </style>
+  
+  <!-- Defer non-critical CSS -->
+  <link rel="stylesheet" href="aj.css" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="aj.css"></noscript>
 </head>
+
 <body>
   <!-- Preloader -->
   <div id="preloader">
@@ -40,100 +102,70 @@
     <canvas id="bg-canvas"></canvas>
     <div class="custom-cursor"></div>
 
-   
-
     <!-- Navbar -->
     <nav class="navbar">
-      <span class="menu-toggle">&#9776;</span> <!-- Hamburger Icon -->
+      <span class="menu-toggle" aria-label="Toggle navigation menu">&#9776;</span>
       <ul>
-        <li><a href="about.html">About</a></li>
-        <li><a href="RenderCV_EngineeringResumes_Theme.pdf">Resume</a></li>
-        <li><a href="work.html">Work</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="RenderCV_EngineeringResumes_Theme.pdf" target="_blank">Resume</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#tech">Tech Stack</a></li>
+        <li><a href="#contact">Contact</a></li>
         <li><a href="education.html">Education</a></li>
         <li><a href="Certificates.html">Certificates</a></li>
-        <li><a href="index.html">Home</a></li>
         <li><a href="family.html">Family</a></li>
+        <li><a href="login.html" class="client-login">Client Login</a></li>
       </ul>
     </nav>
 
-    
-
     <!-- Hero Section -->
-
-    <section data-scroll-section>
+    <section data-scroll-section class="hero">
       <div class="profile-frame">
-        <img src="abhinandanjain.jpeg" alt="Abhinandan Jain"
-     style="
-       border-radius: 50%;
-       border: 2px solid #f3ebeb;
-       box-shadow: 
-         0 4px 15px rgba(0,0,0,0.3),
-         0 8px 30px rgba(0,0,0,0.25),
-         0 0 20px rgba(0, 229, 255, 0.6);
-       transition: all 0.4s ease;
-     "
-     onmouseover="this.style.transform='scale(1.05)';this.style.boxShadow='0 10px 25px rgba(0,0,0,0.4), 0 15px 40px rgba(0,229,255,0.8)';"
-     onmouseout="this.style.transform='scale(1)';this.style.boxShadow='0 4px 15px rgba(0,0,0,0.3), 0 8px 30px rgba(0,0,0,0.25), 0 0 20px rgba(0,229,255,0.6)';"
-/>
-
+        <img src="abhinandanjain.jpeg" alt="Abhinandan Jain - Web Developer and AI Enthusiast" 
+             width="200" height="200" loading="eager" class="profile-img" />
       </div>
       <h1 data-scroll data-scroll-speed="2">Abhinandan Jain</h1>
-     <a href="login.html" 
-   style="display:inline-block;
-          padding:12px 20px;
-          background:transparent;
-          color:#fff;
-          font-size:16px;
-          text-decoration:none;
-          border-radius:50px;
-          text-align:center;
-          width:100%;
-          max-width:250px;
-          box-sizing:border-box;">
-   Client Login
-</a>
-
       <p data-scroll data-scroll-speed="1">CSE Student | Developer | Leader | AI Enthusiast</p>
     </section>
 
     <!-- About -->
-    <section data-scroll-section>
+    <section data-scroll-section id="about">
       <h2 data-scroll data-scroll-speed="1">About Me</h2>
       <p data-scroll data-scroll-speed="2">
-        I'm a B.Tech CSE student at JECRC with a strong foundation in programming, web dev, and ML.
+        I'm a B.Tech CSE student at JECRC with a strong foundation in programming, web development, and machine learning.
         I've led teams in hackathons, developed AI projects, and mentor peers in Python, C++, and JavaScript.
       </p>
     </section>
 
     <!-- Projects -->
-    <section class="projects-section">
+    <section data-scroll-section id="projects" class="projects-section">
       <h2 class="section-title">My Projects</h2>
       <div class="projects-container">
         <div class="project-card">
           <h3>VIRTUAL 3D Store Project</h3>
           <p>AI based virtual reality 3D store</p>
-          <a href="https://retail-vision-guide.lovable.app" target="_blank">View Project</a>
+          <a href="https://retail-vision-guide.lovable.app" target="_blank" rel="noopener">View Project</a>
         </div>
         <div class="project-card">
           <h3>Weather App</h3>
           <p>Weather forecast app can predict the weather up to 5 days</p>
-          <a href="https://today-weather-io.vercel.app/" target="_blank">View Project</a>
+          <a href="https://today-weather-io.vercel.app/" target="_blank" rel="noopener">View Project</a>
         </div>
         <div class="project-card">
           <h3>Education GURU</h3>
           <p>Education website with AI integration</p>
-          <a href="https://educationguru.vercel.app/" target="_blank">View Project</a>
+          <a href="https://educationguru.vercel.app/" target="_blank" rel="noopener">View Project</a>
         </div>
         <div class="project-card">
           <h3>Jarvis AI</h3>
           <p>An AI assistant which can do all work</p>
-          <a href="https://github.com/abhinandanjain001/jarvis-ai" target="_blank">View Project</a>
+          <a href="https://github.com/abhinandanjain001/jarvis-ai" target="_blank" rel="noopener">View Project</a>
         </div>
       </div>
     </section>
 
     <!-- Tech Stack -->
-    <section data-scroll-section>
+    <section data-scroll-section id="tech">
       <h2 data-scroll data-scroll-speed="1">Tech Stack</h2>
       <ul class="tech-list">
         <li>C++</li>
@@ -148,63 +180,88 @@
     </section>
 
     <!-- Contact -->
-    <section data-scroll-section>
+    <section data-scroll-section id="contact">
       <h2 data-scroll data-scroll-speed="1">Contact</h2>
-      <p>Email: abhinandanjain.cse27@jecrc.ac.in</p>
-      <p>Phone: 8955881717</p>
-      <p>GitHub: <a href="https://github.com/Abhinandanjain13" target="_blank">Abhinandanjain13</a></p>
-      <p>LinkedIn: <a href="https://linkedin.com/in/abhinandan-jain-2559a6292" target="_blank">LinkedIn Profile</a></p>
-      <p>LeetCode: <a href="https://leetcode.com/u/AbhinandanJain/" target="_blank">LeetCode Profile</a></p>
-      <p>GeeksforGeeks: <a href="https://www.geeksforgeeks.org/user/abhinandan2bx4/" target="_blank">GFG Profile</a></p>
+      <p>Email: <a href="mailto:abhinandanjain.cse27@jecrc.ac.in">abhinandanjain.cse27@jecrc.ac.in</a></p>
+      <p>Phone: <a href="tel:+918955881717">8955881717</a></p>
+      <p>GitHub: <a href="https://github.com/Abhinandanjain13" target="_blank" rel="noopener">Abhinandanjain13</a></p>
+      <p>LinkedIn: <a href="https://linkedin.com/in/abhinandan-jain-2559a6292" target="_blank" rel="noopener">LinkedIn Profile</a></p>
+      <p>LeetCode: <a href="https://leetcode.com/u/AbhinandanJain/" target="_blank" rel="noopener">LeetCode Profile</a></p>
+      <p>GeeksforGeeks: <a href="https://www.geeksforgeeks.org/user/abhinandan2bx4/" target="_blank" rel="noopener">GFG Profile</a></p>
+      
+      <button aria-label="Open contact form" class="contact-btn">Contact</button>
     </section>
 
     <!-- Footer -->
-    <div class="footer">&copy; 2025 Abhinandan Jain</div>
+    <footer class="footer">
+      <p>&copy; 2025 Abhinandan Jain. All rights reserved.</p>
+    </footer>
   </div>
 
-  <!-- Scripts -->
+  <!-- Scripts - Deferred for performance -->
   <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.js"></script>
-  <script src="aj.js"></script>
-  <script src="loading.js"></script>
+  <script>
+    // Initialize Locomotive Scroll after page loads
+    window.addEventListener('load', function() {
+      const scroll = new LocomotiveScroll({
+        el: document.querySelector('[data-scroll-container]'),
+        smooth: true
+      });
+    });
+  </script>
+  
+  <script src="aj.js" defer></script>
+  <script src="loading.js" defer></script>
 
   <script>
-    // Preloader fade out
-    window.addEventListener("load", function () {
+    // Preloader and loading screen logic
+    document.addEventListener("DOMContentLoaded", () => {
       const preloader = document.getElementById("preloader");
-      preloader.style.opacity = "0";
-      setTimeout(() => {
+      const loadingScreen = document.getElementById("loading-screen");
+
+      // Check if preloader was already shown in this session
+      if (sessionStorage.getItem("preloader-shown")) {
         preloader.style.display = "none";
-      }, 800);
+        loadingScreen.style.display = "none";
+      } else {
+        window.addEventListener("load", () => {
+          setTimeout(() => {
+            preloader.style.opacity = "0";
+            loadingScreen.style.opacity = "0";
+            setTimeout(() => {
+              preloader.style.display = "none";
+              loadingScreen.style.display = "none";
+              // Mark preloader as shown
+              sessionStorage.setItem("preloader-shown", "true");
+            }, 800);
+          }, 3000); // delay to show animation
+        });
+      }
+
+      // ESC key to skip loading
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+          preloader.style.opacity = "0";
+          loadingScreen.style.opacity = "0";
+          setTimeout(() => {
+            preloader.style.display = "none";
+            loadingScreen.style.display = "none";
+            sessionStorage.setItem("preloader-shown", "true");
+          }, 300);
+        }
+      });
+
+      // Mobile menu toggle
+      const menuToggle = document.querySelector('.menu-toggle');
+      const navMenu = document.querySelector('.navbar ul');
+      
+      if (menuToggle && navMenu) {
+        menuToggle.addEventListener('click', () => {
+          navMenu.classList.toggle('active');
+          menuToggle.classList.toggle('active');
+        });
+      }
     });
-
-    // Navbar toggle for mobile
-   /* ===============================
-   PRELOADER (SHOW ONLY ONCE PER VISIT)
-================================= */
-document.addEventListener("DOMContentLoaded", () => {
-  const preloader = document.getElementById("preloader");
-  const loadingScreen = document.getElementById("loading-screen");
-
-  // ✅ Check if preloader was already shown in this session
-  if (sessionStorage.getItem("preloader-shown")) {
-    preloader.style.display = "none";
-    loadingScreen.style.display = "none";
-  } else {
-    window.addEventListener("load", () => {
-      setTimeout(() => {
-        preloader.style.opacity = "0";
-        loadingScreen.style.opacity = "0";
-        setTimeout(() => {
-          preloader.style.display = "none";
-          loadingScreen.style.display = "none";
-          // ✅ Mark preloader as shown
-          sessionStorage.setItem("preloader-shown", "true");
-        }, 800);
-      }, 3000); // delay to show animation
-    });
-  }
-});
-
   </script>
 </body>
 </html>
