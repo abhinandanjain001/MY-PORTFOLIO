@@ -1,181 +1,384 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Login — Abhinandan Jain</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Certificates | Abhinandan Jain</title>
+  <meta name="description" content="Certificates and achievements of Abhinandan Jain in AI, technology, and data analytics">
+  <meta name="keywords" content="Abhinandan Jain, certificates, AI, technology, data analytics, Deloitte, TATA">
+  
   <style>
-    /* Reset & Base Styles */
+    /* ========== BASE STYLES ========== */
+    :root {
+      --primary: #00e5ff;
+      --primary-dark: #00a8cc;
+      --secondary: #00ff00;
+      --secondary-rgb: 0, 255, 0;
+      --dark: #0d0d0d;
+      --dark-light: #1a1a1a;
+      --text: #f3ebeb;
+      --text-muted: #8b949e;
+      --card-bg: #1a1a1a;
+      --card-border: rgba(0, 255, 0, 0.5);
+      --transition: all 0.3s ease;
+    }
+    
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
     }
-
+    
     body {
-      font-family: 'Inter', sans-serif;
-      background-color: #0d1117;
-      color: #f3ebeb;
+      font-family: 'Courier New', monospace;
+      background: var(--dark);
+      color: var(--text);
       line-height: 1.6;
-      min-height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      padding: 20px;
+      overflow-x: hidden;
     }
-
-    /* Responsive Container */
-    .login-container {
-      width: 100%;
-      max-width: 420px;
-      padding: 32px;
-      background: rgba(255, 255, 255, 0.05);
-      border: 1px solid #0f0;
-      border-radius: 16px;
-      box-shadow: 0 8px 32px rgba(0, 255, 0, 0.05);
-      backdrop-filter: blur(8px);
+    
+    /* ========== TYPOGRAPHY ========== */
+    h1, h2, h3 {
+      font-weight: 700;
+      line-height: 1.2;
+      margin-bottom: 1rem;
     }
-
-    .login-container h2 {
-      color: #0f0;
-      font-size: 1.6rem;
-      margin-bottom: 24px;
+    
+    h1 {
+      font-size: clamp(1.8rem, 5vw, 2.5rem);
+      color: var(--primary);
       text-align: center;
+      margin-bottom: 2rem;
+      text-shadow: 0 0 10px rgba(0, 229, 255, 0.7);
     }
-
-    .form-group {
-      margin-bottom: 20px;
+    
+    h3 {
+      color: var(--secondary);
+      font-size: 1.2rem;
     }
-
-    .form-group label {
-      display: block;
-      margin-bottom: 8px;
-      color: #9fe89f;
-      font-size: 0.95rem;
-      font-weight: 500;
+    
+    p {
+      margin-bottom: 1rem;
     }
-
-    .form-group input {
-      width: 100%;
-      padding: 12px 14px;
-      background: rgba(0, 0, 0, 0.3);
-      border: 1px solid #0f0;
-      color: #fff;
-      border-radius: 8px;
-      font-size: 1rem;
-      transition: border-color 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    .form-group input:focus {
-      outline: none;
-      border-color: #00ff41;
-      box-shadow: 0 0 12px rgba(0, 255, 0, 0.25);
-    }
-
-    .login-btn {
-      width: 100%;
-      padding: 14px;
-      background: #0f0;
-      color: #000;
-      border: none;
-      border-radius: 8px;
-      font-size: 1.05rem;
-      font-weight: 600;
-      cursor: pointer;
-      transition: background 0.3s ease, transform 0.2s ease;
-    }
-
-    .login-btn:hover {
-      background: #00ff41;
-      transform: translateY(-2px);
-    }
-
-    .login-btn:active {
-      transform: translateY(0);
-    }
-
-    .forgot-password {
-      text-align: center;
-      margin-top: 16px;
-    }
-
-    .forgot-password a {
-      color: #9fe89f;
-      font-size: 0.95rem;
+    
+    a {
+      color: var(--primary);
       text-decoration: none;
+      transition: var(--transition);
     }
-
-    .forgot-password a:hover {
-      text-decoration: underline;
+    
+    a:hover {
+      color: var(--secondary);
     }
-
-    .demo-note {
-      text-align: center;
-      margin-top: 20px;
-      font-size: 0.85rem;
-      color: #9fe89f;
+    
+    /* ========== LAYOUT ========== */
+    .certificates {
+      padding: 100px 20px 40px;
+      max-width: 1200px;
+      margin: 0 auto;
     }
-
-    /* Responsive Adjustments */
+    
+    /* ========== NAVBAR ========== */
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      padding: 1rem 2rem;
+      background: rgba(13, 13, 13, 0.95);
+      backdrop-filter: blur(10px);
+      z-index: 100;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid rgba(0, 255, 0, 0.2);
+    }
+    
+    .menu-toggle {
+      display: none;
+      color: var(--text);
+      font-size: 1.8rem;
+      cursor: pointer;
+      z-index: 101;
+    }
+    
+    .navbar ul {
+      display: flex;
+      list-style: none;
+      gap: 1.5rem;
+    }
+    
+    .navbar a {
+      color: var(--text);
+      font-weight: 600;
+      position: relative;
+      padding: 0.5rem 0;
+    }
+    
+    .navbar a::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--primary);
+      transition: var(--transition);
+    }
+    
+    .navbar a:hover::after,
+    .navbar a.active::after {
+      width: 100%;
+    }
+    
+    /* ========== CERTIFICATES GRID ========== */
+    .cert-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+    
+    .cert-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 12px;
+      overflow: hidden;
+      transition: var(--transition);
+      position: relative;
+    }
+    
+    .cert-card::before {
+      content: '';
+      position: absolute;
+      top: -2px;
+      left: -2px;
+      right: -2px;
+      bottom: -2px;
+      z-index: -1;
+      background: linear-gradient(45deg, var(--primary), var(--secondary), transparent);
+      border-radius: 14px;
+      opacity: 0;
+      transition: var(--transition);
+    }
+    
+    .cert-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 10px 25px rgba(var(--secondary-rgb), 0.3);
+    }
+    
+    .cert-card:hover::before {
+      opacity: 1;
+    }
+    
+    .cert-card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-bottom: 1px solid var(--card-border);
+      transition: var(--transition);
+    }
+    
+    .cert-card:hover img {
+      transform: scale(1.05);
+    }
+    
+    .cert-card-content {
+      padding: 1.5rem;
+    }
+    
+    .cert-card h3 {
+      margin-bottom: 0.5rem;
+      font-size: 1.3rem;
+    }
+    
+    .cert-card p {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+    }
+    
+    .cert-link {
+      display: inline-block;
+      margin-top: 1rem;
+      padding: 0.5rem 1rem;
+      background: transparent;
+      border: 1px solid var(--primary);
+      border-radius: 50px;
+      color: var(--primary);
+      font-weight: 600;
+      transition: var(--transition);
+    }
+    
+    .cert-link:hover {
+      background: var(--primary);
+      color: var(--dark);
+    }
+    
+    /* ========== RESPONSIVE DESIGN ========== */
+    @media (max-width: 768px) {
+      .navbar {
+        padding: 1rem;
+      }
+      
+      .menu-toggle {
+        display: block;
+      }
+      
+      .navbar ul {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        height: 100vh;
+        width: 70%;
+        background: var(--dark-light);
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        transition: right 0.4s ease;
+        box-shadow: -5px 0 25px rgba(0, 0, 0, 0.2);
+      }
+      
+      .navbar ul.active {
+        right: 0;
+      }
+      
+      .certificates {
+        padding: 80px 1rem 2rem;
+      }
+      
+      .cert-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+    
     @media (max-width: 480px) {
-      .login-container {
-        padding: 24px;
-        border-radius: 12px;
+      .cert-card img {
+        height: 180px;
       }
-
-      .login-container h2 {
-        font-size: 1.4rem;
-      }
-
-      .form-group input,
-      .login-btn {
-        font-size: 0.95rem;
+      
+      .cert-card-content {
+        padding: 1rem;
       }
     }
-
-    @media (max-width: 360px) {
-      body {
-        padding: 10px;
-      }
-
-      .login-container {
-        padding: 20px;
-      }
+    
+    /* ========== ANIMATIONS ========== */
+    @keyframes glitch {
+      0% { transform: translate(0); }
+      20% { transform: translate(-2px, 2px); }
+      40% { transform: translate(-2px, -2px); }
+      60% { transform: translate(2px, 2px); }
+      80% { transform: translate(2px, -2px); }
+      100% { transform: translate(0); }
+    }
+    
+    .cert-card:hover h3 {
+      animation: glitch 0.5s infinite;
     }
   </style>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
+
 <body>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <span class="menu-toggle">&#9776;</span>
+    <ul>
+      <li><a href="about.html">About</a></li>
+      <li><a href="family.html">Family</a></li>
+      <li><a href="work.html">Work</a></li>
+      <li><a href="education.html">Education</a></li>
+      <li><a href="Certificates.html" class="active">Certificates</a></li>
+      <li><a href="index.html">Home</a></li>
+    </ul>
+  </nav>
 
-  <div class="login-container" role="form" aria-labelledby="login-heading">
-    <h2 id="login-heading">Sign In</h2>
-    <form id="login-form">
-      <div class="form-group">
-        <label for="email">Email Address</label>
-        <input type="email" id="email" placeholder="you@example.com" required />
+  <!-- Certificates Section -->
+  <section class="certificates">
+    <h1>My Certificates</h1>
+    <div class="cert-grid">
+      
+      <!-- Certificate Card 1 -->
+      <div class="cert-card">
+        <a href="https://drive.google.com/file/d/1BVskWuPPFxP8ZQkEZT26cLRSg8upZf7N/view?usp=drivesdk" target="_blank" rel="noopener">
+          <img src="ceritficate.png" alt="AI for Beginners Certificate from HP-Life" loading="lazy">
+        </a>
+        <div class="cert-card-content">
+          <h3>AI for Beginners</h3>
+          <p>Learned basics of AI through HP-Life's comprehensive beginner course</p>
+          <a href="https://drive.google.com/file/d/1BVskWuPPFxP8ZQkEZT26cLRSg8upZf7N/view?usp=drivesdk" target="_blank" rel="noopener" class="cert-link">View Certificate</a>
+        </div>
       </div>
-      <div class="form-group">
-        <label for="password">Password</label>
-        <input type="password" id="password" placeholder="••••••••" required />
-      </div>
-      <button type="submit" class="login-btn">Log In</button>
-    </form>
 
-    <div class="forgot-password">
-      <a href="#">Forgot password?</a>
+      <!-- Certificate Card 2 -->
+      <div class="cert-card">
+        <a href="https://drive.google.com/file/d/1BaicJOXEEdX_sZw0GTKIKHToh598Hx-P/view?usp=drivesdk" target="_blank" rel="noopener">
+          <img src="certificate2.png" alt="Technology Job Simulation Certificate from Deloitte" loading="lazy">
+        </a>
+        <div class="cert-card-content">
+          <h3>Technology Job Simulation</h3>
+          <p>A 3-hour internship from Deloitte on Technology Simulation</p>
+          <a href="https://drive.google.com/file/d/1BaicJOXEEdX_sZw0GTKIKHToh598Hx-P/view?usp=drivesdk" target="_blank" rel="noopener" class="cert-link">View Certificate</a>
+        </div>
+      </div>
+
+      <!-- Certificate Card 3 -->
+      <div class="cert-card">
+        <a href="https://drive.google.com/file/d/1BbQAVlPbxQDkpyjeEw5vAXtonXthU5SC/view?usp=drivesdk" target="_blank" rel="noopener">
+          <img src="tata.png" alt="GenAI Powered Data Analytics Job Simulation from TATA" loading="lazy">
+        </a>
+        <div class="cert-card-content">
+          <h3>Gen AI Data Analytics</h3>
+          <p>GenAI Powered Data Analytics Job Simulation from TATA</p>
+          <a href="https://drive.google.com/file/d/1BbQAVlPbxQDkpyjeEw5vAXtonXthU5SC/view?usp=drivesdk" target="_blank" rel="noopener" class="cert-link">View Certificate</a>
+        </div>
+      </div>
+
     </div>
-
-    <p class="demo-note">
-      Demo: Enter any email and password to continue.
-    </p>
-  </div>
+  </section>
 
   <script>
-    document.getElementById("login-form").addEventListener("submit", function(e) {
-      e.preventDefault();
-      alert("Logged in successfully! (Demo mode)");
+    // Mobile menu toggle
+    const menuToggle = document.querySelector(".menu-toggle");
+    const navMenu = document.querySelector(".navbar ul");
+
+    if (menuToggle && navMenu) {
+      menuToggle.addEventListener("click", () => {
+        navMenu.classList.toggle("active");
+        menuToggle.textContent = navMenu.classList.contains("active") ? "✕" : "☰";
+      });
+
+      // Close menu when clicking a link
+      document.querySelectorAll(".navbar a").forEach(link => {
+        link.addEventListener("click", () => {
+          navMenu.classList.remove("active");
+          menuToggle.textContent = "☰";
+        });
+      });
+    }
+
+    // Close menu when clicking outside
+    document.addEventListener("click", (e) => {
+      if (navMenu.classList.contains("active") && 
+          !e.target.closest(".navbar ul") && 
+          !e.target.closest(".menu-toggle")) {
+        navMenu.classList.remove("active");
+        menuToggle.textContent = "☰";
+      }
+    });
+
+    // Add subtle animation to certificate cards on page load
+    document.addEventListener("DOMContentLoaded", () => {
+      const certCards = document.querySelectorAll(".cert-card");
+      certCards.forEach((card, index) => {
+        card.style.opacity = "0";
+        card.style.transform = "translateY(20px)";
+        
+        setTimeout(() => {
+          card.style.transition = "opacity 0.5s ease, transform 0.5s ease";
+          card.style.opacity = "1";
+          card.style.transform = "translateY(0)";
+        }, 100 * index);
+      });
     });
   </script>
-
 </body>
 </html>
