@@ -590,3 +590,26 @@
       animation: ripple 0.6s linear;
       pointer-events: none;
     }
+    /* Adjust navbar for desktop */
+.navbar {
+  justify-content: space-between; /* logo/brand left, menu right */
+  align-items: center;
+}
+
+/* Mobile menu adjustments */
+@media (max-width: 992px) {
+  .navbar ul {
+    width: 250px; /* instead of 70% if you want smaller panel */
+    text-align: center;
+    padding: 2rem 1rem;
+  }
+
+  .navbar ul li {
+    margin: 1rem 0;
+  }
+
+  .menu-toggle {
+    position: relative;
+    z-index: 110; /* ensures ☰ is always clickable */
+  }
+}
